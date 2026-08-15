@@ -1,0 +1,15 @@
+import { Suspense, lazy } from "react"
+import LoadingPage from "./LoadingPage"
+
+// Loadable wrapper for lazy loading
+const Loadable = (Component) => (props) => (
+  <Suspense fallback={<LoadingPage />}>
+    <Component {...props} />
+  </Suspense>
+)
+
+// Lazy loaded pages
+export const HomePage = Loadable(lazy(() => import("../pages/Home.jsx")));
+export const AboutPage = Loadable(lazy(() => import("../pages/About.jsx")));
+export const ServicesPage = Loadable(lazy(() => import("../pages/Services.jsx")));
+export const ContactPage = Loadable(lazy(() => import("../pages/Contact.jsx")));
