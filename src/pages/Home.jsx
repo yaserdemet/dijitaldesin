@@ -16,8 +16,8 @@ const Home = () => {
 
         <FirstSection />
         <ChartsSection />
-        <Carosuel />
       </section>
+      <Carosuel />
     </>
   );
 };

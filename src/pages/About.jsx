@@ -1,3 +1,5 @@
+import Seo from "../components/seo ui/Seo"
+
 const About = () => {
   return (
     <div className="py-20 px-4">

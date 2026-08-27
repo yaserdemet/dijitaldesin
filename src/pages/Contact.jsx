@@ -1,12 +1,14 @@
 import ContactHeader from '../components/contact/ContactHeader'
 import ContactForm from '../components/contact/ContactForm'
 import MapSection from '../components/contact/MapSection'
+import AboutSection from '../components/contact/AboutSection'
 import ContactHours from '../components/contact/ContactHours'
-import SocialLinks from '../components/contact/SocialLinks'
+import Seo from '../components/seo ui/Seo'
 
 const Contact = () => {
   return (
     <div className="bg-white">
+      <Seo title="İletişim" description="DijitalDesin ile iletişime geçin. Sorularınızı yanıtlamak ve size yardımcı olmak için buradayız." />
       <ContactHeader />
 
       <div className="py-16 md:py-24 px-4 relative">
@@ -30,10 +32,8 @@ const Contact = () => {
 
           <div className="border-t-2 border-gray-200 pt-16">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <AboutSection />
               <ContactHours />
-              <div>
-                <SocialLinks />
-              </div>
             </div>
           </div>
         </div>
