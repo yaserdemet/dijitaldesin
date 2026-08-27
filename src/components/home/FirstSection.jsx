@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-const REKLAM_VALUES = ["Değer", "Kazanç", "Satış", "Dönüşüm"];
+import { Icon } from "@iconify/react";
 
+const REKLAM_VALUES = ["Değer", "Kazanç", "Satış", "Dönüşüm"];
 
 const FirstSection = () => {
   const [reklam, setReklam] = useState(REKLAM_VALUES[0]);
@@ -43,7 +44,9 @@ const FirstSection = () => {
               </span>
             </p>
           </div>
-          <button
+          <div className="flex flex-col gap-4 lg:flex-row">
+
+        <button
             className="  px-6 py-3
   rounded-xl
   bg-black
@@ -57,6 +60,23 @@ const FirstSection = () => {
           >
             Bizimle İletişime Geçin
           </button>
+          <button
+            className="  px-6 py-3
+  rounded-xl
+  bg-white
+  text-black
+  font-semibold
+  shadow-lg
+  transition-all
+  duration-300
+  hover:shadow-xl
+  hover:-translate-y-1"
+          >
+            <Icon icon="akar-icons:phone" className="w-4 h-4 inline" /> Sizi
+            Arayalım
+          </button>
+          </div>
+  
         </div>
 
         {/* Sağ Kolon (Web'de 2. Kolon, Mobilde Alt Satır) */}
