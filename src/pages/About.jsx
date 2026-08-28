@@ -1,4 +1,4 @@
-import Seo from "../components/seo ui/Seo";
+import Seo from "../utils/Seo";
 import TicimaxLogo from "../assets/ticimax-logo.svg?url";
 import IkasLogo from "../assets/ikas-logo.webp";
 import AboutContent from "../components/about/AboutContent";

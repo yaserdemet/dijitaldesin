@@ -1,4 +1,6 @@
 import { Icon } from "@iconify/react";
+import HighlightText from "../../utils/HighlightText";
+
 import {
   BarChart,
   Bar,
@@ -38,7 +40,12 @@ const dataDonusum = [
 
 const ChartsSection = () => {
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8">
+    <div className="relative z-10 max-w-7xl mx-auto px-4 py-8">
+      <p className="font-bold text-4xl text-center mb-8 ">
+        {" "}
+        <HighlightText>Veriyle Desteklenen</HighlightText> <br /> Stratejik
+        Kararlar
+      </p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {/* Card 1: Günlük Trafik (BarChart) */}
         <div className="group relative rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-blue-300 flex flex-col justify-between">

@@ -3,7 +3,7 @@ import ContactForm from '../components/contact/ContactForm'
 import MapSection from '../components/contact/MapSection'
 import AboutSection from '../components/contact/AboutSection'
 import ContactHours from '../components/contact/ContactHours'
-import Seo from '../components/seo ui/Seo'
+import Seo from '../utils/Seo'
 
 const Contact = () => {
   return (

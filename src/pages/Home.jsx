@@ -4,6 +4,7 @@ import Carosuel from "../components/home/Carosuel";
 import LaunchCTA from "../components/home/LaunchCTA";
 import Counts from "../components/home/Counts";
 import Testimony from "../components/home/Testimony";
+import RevenueSection from "../components/home/RevenueSection";
 
 const Home = () => {
   return (
@@ -23,6 +24,7 @@ const Home = () => {
       </main>
 
       <Carosuel />
+      <RevenueSection />
       <Testimony />
       <LaunchCTA />
       <Counts />

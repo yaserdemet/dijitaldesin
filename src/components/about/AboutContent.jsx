@@ -1,5 +1,6 @@
 import AboutHeader from "./AboutHeader";
 import FeaturesList from "./FeaturesList";
+import HighlightText from "../../utils/HighlightText";
 
 const AboutContent = () => {
   return (
@@ -7,10 +8,7 @@ const AboutContent = () => {
       <AboutHeader />
 
       <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-        Markaların Dijital{" "}
-        <span className="bg-[rgb(223,255,79)] px-3 py-1 rounded-lg">
-          Dönüşümü
-        </span>
+        Markaların Dijital <HighlightText>Dönüşümü</HighlightText>
       </h1>
 
       <p className="text-gray-600 text-lg mb-8 leading-relaxed">

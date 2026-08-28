@@ -23,7 +23,7 @@ const Testimony = () => {
   ];
 
   return (
-    <section className="py-24 px-4 bg-white">
+    <section className="py-24 px-4 bg-slate-50">
       <div className="max-w-7xl mx-auto">
         <div className="mb-12 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
@@ -42,18 +42,15 @@ const Testimony = () => {
             <div className="absolute top-0 left-0 right-0 h-12 bg-gradient-to-b from-white to-transparent z-10 pointer-events-none" />
             <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none" />
 
-            <div className="scroll-animate flex flex-col gap-6" style={{ height: 'fit-content' }}>
+            <div
+              className="scroll-animate flex flex-col gap-6"
+              style={{ height: "fit-content" }}
+            >
               {reviews.map((review, index) => (
-                <ReviewCard
-                  key={`left-${index}`}
-                  review={review}
-                />
+                <ReviewCard key={`left-${index}`} review={review} />
               ))}
               {reviews.map((review, index) => (
-                <ReviewCard
-                  key={`left-repeat-${index}`}
-                  review={review}
-                />
+                <ReviewCard key={`left-repeat-${index}`} review={review} />
               ))}
             </div>
           </div>
@@ -63,18 +60,15 @@ const Testimony = () => {
             <div className="absolute top-0 left-0 right-0 h-12 bg-gradient-to-b from-white to-transparent z-10 pointer-events-none" />
             <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none" />
 
-            <div className="scroll-animate-down flex flex-col gap-6" style={{ height: 'fit-content' }}>
+            <div
+              className="scroll-animate-down flex flex-col gap-6"
+              style={{ height: "fit-content" }}
+            >
               {reviews.map((review, index) => (
-                <ReviewCard
-                  key={`right-${index}`}
-                  review={review}
-                />
+                <ReviewCard key={`right-${index}`} review={review} />
               ))}
               {reviews.map((review, index) => (
-                <ReviewCard
-                  key={`right-repeat-${index}`}
-                  review={review}
-                />
+                <ReviewCard key={`right-repeat-${index}`} review={review} />
               ))}
             </div>
           </div>
@@ -100,7 +94,6 @@ const ReviewCard = ({ review }) => {
       "
     >
       <div className="flex items-start gap-4">
-
         <img
           src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${review.name}`}
           alt={review.name}
@@ -108,21 +101,14 @@ const ReviewCard = ({ review }) => {
         />
 
         <div className="flex-1">
-          <p className="text-gray-700 italic mb-3">
-            "{review.text}"
-          </p>
+          <p className="text-gray-700 italic mb-3">"{review.text}"</p>
 
           <div className="flex items-center gap-2">
-            <h4 className="font-bold text-gray-900">
-              {review.name}
-            </h4>
+            <h4 className="font-bold text-gray-900">{review.name}</h4>
 
-            <span className="text-gray-500 text-sm">
-              • {review.company}
-            </span>
+            <span className="text-gray-500 text-sm">• {review.company}</span>
           </div>
         </div>
-
       </div>
     </div>
   );

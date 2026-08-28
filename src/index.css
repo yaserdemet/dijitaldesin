@@ -44,6 +44,19 @@ body {
   animation: loopDown 40s linear infinite;
 }
 
+@keyframes loopUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.scroll-loop-up {
+  animation: loopUp 40s linear infinite;
+}
+
 @keyframes cardIn {
   from {
     opacity: 0;
@@ -57,4 +70,99 @@ body {
 
 .animate-card-in {
   animation: cardIn 0.6s ease-out forwards;
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.3s ease-out forwards;
+}
+
+/* Vurgu efekti: 2sn'lik tek bir döngü. Üç animasyon da aynı süreye sahip,
+   böylece kutu / katman / imleç birbirinden kaymadan senkron kalıyor.
+   0-10%: bekleme, 10-40%: çizilme, 40-80%: durma, 80-92%: sönme,
+   92-100%: görünmezken başa sarma. */
+
+@keyframes highlightIn {
+  0%,
+  10% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  25%,
+  80% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  92%,
+  100% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+@keyframes highlightBox {
+  0%,
+  10% {
+    width: 0;
+    height: 0;
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  40%,
+  92% {
+    width: 100%;
+    height: 100%;
+  }
+  93%,
+  100% {
+    width: 0;
+    height: 0;
+  }
+}
+
+@keyframes highlightCursor {
+  0%,
+  15% {
+    opacity: 0;
+    transform: rotate(-90deg);
+  }
+  30% {
+    opacity: 1;
+  }
+  40%,
+  92% {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+  93%,
+  100% {
+    opacity: 0;
+    transform: rotate(-90deg);
+  }
+}
+
+.animate-highlight-in {
+  opacity: 0;
+  transform-origin: 0% 0%;
+  animation: highlightIn 2s ease-out infinite;
+}
+
+.animate-highlight-box {
+  width: 0;
+  height: 0;
+  animation: highlightBox 2s linear infinite;
+}
+
+.animate-highlight-cursor {
+  opacity: 0;
+  animation: highlightCursor 2s ease-out infinite;
 }

@@ -28,13 +28,13 @@ const MissionList = () => {
     <>
       <section className="grid grid-cols-2 gap-4 mt-24">
         <div>
-          <div className="inline-block mb-6">
+          <div className="inline-block mb-12">
             <span className="px-4 py-2 border border-gray-300 rounded-full text-sm font-semibold text-gray-700">
               ANKARA'DA 2019'DAN BERİ
             </span>
           </div>
 
-          <h5 className="font-bold text-3xl">Neler Yapıyoruz</h5>
+          <h5 className="font-bold text-3xl mb-4">Neler Yapıyoruz</h5>
 
           <p className="text-gray-600 text-lg mb-8 leading-relaxed">
             E-ticaret ajansı olarak kurulumdan pazarlamaya; e-ticaret

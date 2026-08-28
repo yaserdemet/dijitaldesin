@@ -1,15 +1,13 @@
-import Seo from "../components/seo ui/Seo";
+import Seo from "../utils/Seo";
 import LogosGrid from "../components/reference/LogosGrid";
-
+import HighlightText from "../utils/HighlightText";
 
 const Reference = () => {
-
   //* Tek tek import yapmak yerine meta glob kullan
   const logoModules = import.meta.glob("../assets/referances/*.svg", {
     eager: true,
     import: "default",
   });
-  
 
   const logos = Object.entries(logoModules).map(([path, src]) => {
     const filename = path.split("/").pop().replace(".svg", "");
@@ -31,9 +29,12 @@ const Reference = () => {
         <div className="max-w-7xl mx-auto px-4 py-20">
           {/* Header */}
           <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-              Referanslar
+            <h1 className="text-5xl font-bold text-gray-900 mb-6">
+              Markalarımızla <HighlightText> Güçlüyüz </HighlightText>
             </h1>
+            <h6 className="text-2xl font-bold text-gray-900 mb-6">
+              Referanslar
+            </h6>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Türkiye'nin çeşitli sektörlerinden 60+ markayla başarıyla
               çalıştığımız projelerimizi göz atın.

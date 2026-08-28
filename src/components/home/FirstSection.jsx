@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
-
+import HighLightText from "../../utils/HighlightText";
 const REKLAM_VALUES = ["Değer", "Kazanç", "Satış", "Dönüşüm"];
 
 const FirstSection = () => {
@@ -39,8 +39,8 @@ const FirstSection = () => {
             </p>
             <p className="font-bold text-gray-900 text-3xl md:text-4xl lg:text-5xl flex items-center justify-center lg:justify-start gap-3 flex-wrap">
               Artan{" "}
-              <span className="px-4 py-2  rounded-xl bg-[rgb(223,255,79)] transition-all duration-300 inline-block min-w-[140px] text-center">
-                {reklam}
+              <span className="px-4 py-2  rounded-xl  min-w-[140px] text-center">
+               <HighLightText>{reklam}</HighLightText>
               </span>
             </p>
           </div>
