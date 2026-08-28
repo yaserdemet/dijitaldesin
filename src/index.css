@@ -4,3 +4,29 @@
 body {
   font-family: 'Nunito', sans-serif;
 }
+
+@keyframes scrollUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50vh);
+  }
+}
+
+@keyframes scrollDown {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(50vh);
+  }
+}
+
+.scroll-animate {
+  animation: scrollUp 25s linear infinite;
+}
+
+.scroll-animate-down {
+  animation: scrollDown 25s linear infinite;
+}

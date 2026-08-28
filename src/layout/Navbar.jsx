@@ -46,9 +46,9 @@ const Navbar = () => {
           <div className="flex items-center gap-4">
             <Link
               to="/contact"
-              className="hidden md:inline-block bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-2 rounded-lg hover:shadow-lg transition font-medium"
+              className="hidden md:inline-block bg-zinc-900 text-white px-6 py-2 rounded-lg hover:shadow-lg transition font-medium"
             >
-              İletişim
+              Sizi Arayalım
             </Link>
 
             {/* Mobile Menu Button */}

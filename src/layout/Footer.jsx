@@ -34,7 +34,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 transition-colors duration-500 ease-in-out hover:bg-blue-600 hover:text-white"
+                className="w-8 h-8 flex items-center justify-center rounded-lg shadow-lg bg-white text-gray-600 transition-colors duration-500 ease-in-out hover:bg-blue-100 border hover:border-blue-300 hover:text-blue"
               >
                 <Icon icon="mynaui:facebook" className="w-5 h-5" />
               </a>
@@ -45,7 +45,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 transition-colors duration-500 ease-in-out hover:bg-pink-600 hover:text-white"
+                className="w-8 h-8 flex items-center justify-center rounded-lg shadow-lg bg-white text-gray-600 transition-colors duration-500 ease-in-out hover:bg-pink-100 border hover:border-pink-300 hover:text-pink"
               >
                 <Icon icon="mynaui:instagram" className="w-5 h-5" />
               </a>
@@ -56,7 +56,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 transition-colors duration-500 ease-in-out hover:bg-blue-600 hover:text-white"
+                className="w-8 h-8 flex items-center justify-center rounded-lg shadow-lg bg-white text-gray-600 transition-colors duration-500 ease-in-out hover:bg-blue-100 border hover:border-blue-300 hover:text-blue"
               >
                 <Icon icon="mynaui:linkedin" className="w-5 h-5" />
               </a>
@@ -65,7 +65,9 @@ const Footer = () => {
 
           {/* Hizmetler */}
           <div className="space-y-4">
-            <h3 className="text-gray-900 font-semibold text-lg">Hizmetler</h3>
+            <h3 className="text-gray-900 font-semibold text-lg border-l-3 border-l-zinc-600 pl-2">
+              Hizmetler
+            </h3>
 
             <ul className="space-y-3">
               <li>
@@ -117,7 +119,9 @@ const Footer = () => {
 
           {/* Şirket */}
           <div className="space-y-4">
-            <h3 className="text-gray-900 font-semibold text-lg">Şirket</h3>
+            <h3 className="text-gray-900 font-semibold text-lg border-l-3 border-l-zinc-600 pl-2">
+              Şirket
+            </h3>
 
             <ul className="space-y-3">
               <li>
@@ -169,7 +173,9 @@ const Footer = () => {
 
           {/* Yasal */}
           <div className="space-y-4">
-            <h3 className="text-gray-900 font-semibold text-lg">Yasal</h3>
+            <h3 className="text-gray-900 font-semibold text-lg border-l-3 border-l-zinc-600 pl-2">
+              Yasal
+            </h3>
 
             <ul className="space-y-3">
               <li>
@@ -222,10 +228,9 @@ const Footer = () => {
               Dijitaldesin bir reklam ve e-ticaret AŞ. markasıdır.
             </p>
           </div>
-          <div >
-
-          <img src={Cards} />
-</div>
+          <div>
+            <img src={Cards} />
+          </div>
 
           <div className="flex gap-6">
             <a
@@ -249,7 +254,6 @@ const Footer = () => {
               Çerezler
             </a>
           </div>
-
         </div>
       </div>
     </footer>
