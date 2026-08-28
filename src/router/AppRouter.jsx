@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom"
 import Layout from "../layout/Layout"
-import { HomePage, AboutPage, ServicesPage, ContactPage } from "./element.jsx"
+import { HomePage, AboutPage, ServicesPage, ContactPage, ReferancePage } from "./element.jsx"
 import { PATH_PAGE } from "./path"
 
 const router = createBrowserRouter([
@@ -23,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: PATH_PAGE.contact,
         element: <ContactPage />,
+      },
+      {
+        path: PATH_PAGE.referances,
+        element: <ReferancePage />,
       },
     ],
   },

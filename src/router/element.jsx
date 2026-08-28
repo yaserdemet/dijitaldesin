@@ -13,3 +13,4 @@ export const HomePage = Loadable(lazy(() => import("../pages/Home.jsx")));
 export const AboutPage = Loadable(lazy(() => import("../pages/About.jsx")));
 export const ServicesPage = Loadable(lazy(() => import("../pages/Services.jsx")));
 export const ContactPage = Loadable(lazy(() => import("../pages/Contact.jsx")));
+export const ReferancePage = Loadable(lazy(() => import("../pages/Reference.jsx")));

@@ -14,4 +14,5 @@ export const PATH_PAGE = {
   about: path(ROOTS_APP, 'about'),
   services: path(ROOTS_APP, 'services'),
   contact: path(ROOTS_APP, 'contact'),
+  referances: path(ROOTS_APP, 'reference'),
 };

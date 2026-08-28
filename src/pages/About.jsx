@@ -3,6 +3,7 @@ import TicimaxLogo from "../assets/ticimax-logo.svg?url";
 import IkasLogo from "../assets/ikas-logo.webp";
 import AboutContent from "../components/about/AboutContent";
 import OrbitLogos from "../components/about/OrbitLogos";
+import MissionList from "../components/about/MissionList";
 
 const About = () => {
   const platforms = [
@@ -27,6 +28,7 @@ const About = () => {
             <AboutContent />
             <OrbitLogos platforms={platforms} />
           </div>
+        <MissionList />
         </div>
       </div>
 
