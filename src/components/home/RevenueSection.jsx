@@ -7,7 +7,7 @@ import {
   Tooltip,
 } from "recharts";
 import HighlightText from "../../utils/HighlightText";
-import Logo from "../../assets/digi1.png";
+import Logo from "../../assets/icon-d.jpeg";
 
 const dataGelir = [
   { ay: "Oca", gelir: 32 },
@@ -77,7 +77,10 @@ const RevenueSection = () => {
                     <span className="text-3xl md:text-4xl font-bold text-gray-900">
                       %128
                     </span>
-                    <span className="inline-flex items-center text-xs text-gray-700 font-semibold bg-[rgb(223,255,79)] px-2 py-0.5 rounded-full">
+                    <span
+                      className="inline-flex items-center text-xs text-gray-700 font-semibold px-2 py-0.5 rounded-full"
+                      style={{ backgroundColor: 'var(--primary-color)' }}
+                    >
                       +96 gün
                     </span>
                   </div>

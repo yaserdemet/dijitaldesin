@@ -9,10 +9,14 @@ const HighlightText = ({ children }) => {
         aria-hidden="true"
         className="animate-highlight-in pointer-events-none absolute inset-0 z-0"
       >
-        <span className="animate-highlight-box absolute left-0 top-0 rounded-lg bg-[rgb(223,255,79)]">
+        <span
+          className="animate-highlight-box absolute left-0 top-0 rounded-lg"
+          style={{ backgroundColor: 'var(--primary-color)' }}
+        >
           <Icon
             icon="bi:cursor-fill"
-            className="animate-highlight-cursor absolute -bottom-3 -right-2 h-5 w-5 text-[rgb(223,255,79)]"
+            className="animate-highlight-cursor absolute -bottom-3 -right-2 h-5 w-5"
+            style={{ color: 'var(--primary-color)' }}
           />
         </span>
       </span>

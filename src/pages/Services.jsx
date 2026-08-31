@@ -1,17 +1,17 @@
+import Seo from "../utils/Seo";
+import ServicesTabs from "../components/services/ServicesTabs";
+
 const Services = () => {
- 
   return (
-    <div className="py-20 px-4">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-      
+    <>
+      <Seo
+        title="Hizmetlerimiz"
+        description="Performans pazarlama, Google, Meta ve TikTok reklam yönetimi ile markanızı ölçülebilir şekilde büyütüyoruz."
+      />
 
-     
+      <ServicesTabs />
+    </>
+  );
+};
 
-     
-      </div>
-    </div>
-  )
-}
-
-export default Services
+export default Services;
