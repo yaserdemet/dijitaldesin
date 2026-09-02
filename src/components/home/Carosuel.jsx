@@ -8,7 +8,8 @@ const MarqueeComponent =
 
 const brands = [
   { name: "Shopify", icon: "logos:shopify" },
-  { name: "Meta", icon: "logos:meta" },
+ 
+  
   { name: "Google Ads", icon: "logos:google-ads" },
   { name: "TikTok", icon: "logos:tiktok-icon" },
   { name: "ikas", src: ikasLogo },
