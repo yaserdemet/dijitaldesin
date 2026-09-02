@@ -16,4 +16,5 @@ export const PATH_PAGE = {
   contact: path(ROOTS_APP, 'contact'),
   referances: path(ROOTS_APP, 'reference'),
   kvkk: path(ROOTS_APP, 'kvkk'),
+  secretPolicy: path(ROOTS_APP, 'secret-policy'),
 };

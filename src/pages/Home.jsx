@@ -3,7 +3,6 @@ import ChartsSection from "../components/home/ChartsSection";
 import Carosuel from "../components/home/Carosuel";
 import LaunchCTA from "../components/home/LaunchCTA";
 import Counts from "../components/home/Counts";
-import Testimony from "../components/home/Testimony";
 import RevenueSection from "../components/home/RevenueSection";
 
 const Home = () => {
@@ -23,9 +22,17 @@ const Home = () => {
         <ChartsSection />
       </main>
 
-      <Carosuel />
+      <Carosuel variant="brands" />
       <RevenueSection />
-      <Testimony />
+      <Carosuel
+        variant="logos"
+        direction="down"
+        columns={3}
+        mobileColumns={2}
+        logoHeight="h-20"
+        mobileLogoHeight="h-16"
+      />
+
       <LaunchCTA />
       <Counts />
     </>

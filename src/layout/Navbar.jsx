@@ -12,9 +12,9 @@ const NAV_LINKS = [
 
 const NAV_STYLES = {
   link: "text-gray-700 hover:text-black hover:bg-gray-100 p-2 rounded-lg transition-colors duration-300 ease-in-out text-sm",
-  activeLink: "text-black bg-gray-100 p-2 rounded-lg text-sm font-semibold",
-  mobileLink: "text-gray-700 hover:text-indigo-600 transition font-medium px-2 py-2 rounded hover:bg-gray-100",
-  activeMobileLink: "text-indigo-600 transition font-medium px-2 py-2 rounded bg-gray-100",
+  activeLink: "text-black bg-(--third-color) p-2 rounded-lg text-sm font-semibold",
+  mobileLink: "text-black hover:text-(--primary-color) transition font-medium px-2 py-2 rounded hover:bg-gray-100",
+  activeMobileLink: "text-(--primary-color) transition font-medium px-2 py-2 rounded bg-gray-100",
   ctaButton: "bg-zinc-900 text-white px-6 py-2 rounded-lg hover:shadow-lg transition font-medium",
 };
 

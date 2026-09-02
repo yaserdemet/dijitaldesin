@@ -1,13 +1,14 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap");
 
 :root {
-  --primary-color: rgb(223, 255, 79);
-  --secondary-color : rgb(242, 255, 200);
+  --primary-color: rgb(14, 165, 233);
+  --secondary-color: rgb(125, 211, 252);
+  --third-color: rgb(224, 242, 254);
 }
 
 body {
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
 @keyframes scrollUp {

@@ -16,5 +16,6 @@ export const ContactPage = Loadable(lazy(() => import("../pages/Contact.jsx")));
 export const ReferancePage = Loadable(lazy(() => import("../pages/Reference.jsx")));
 export const ErrorPage = Loadable(lazy(() => import("../pages/Error.jsx")));
 export const KVKKPage = Loadable(lazy(() => import("../pages/Kvkk.jsx")));
+export const SecretPolicyPage = Loadable(lazy(() => import("../pages/SecretPolicy.jsx")));
 // export const LoadPage = Loadable(lazy(() => import("../pages/LoadingPage.jsx")));
 

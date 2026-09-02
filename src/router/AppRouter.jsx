@@ -1,7 +1,16 @@
-import { createBrowserRouter } from "react-router-dom"
-import Layout from "../layout/Layout"
-import { HomePage, AboutPage, ServicesPage, ContactPage, ReferancePage, ErrorPage, KVKKPage } from "./element.jsx"
-import { PATH_PAGE } from "./path"
+import { createBrowserRouter } from "react-router-dom";
+import Layout from "../layout/Layout";
+import {
+  HomePage,
+  AboutPage,
+  ServicesPage,
+  ContactPage,
+  ReferancePage,
+  ErrorPage,
+  KVKKPage,
+  SecretPolicyPage,
+} from "./element.jsx";
+import { PATH_PAGE } from "./path";
 
 const router = createBrowserRouter([
   {
@@ -30,11 +39,15 @@ const router = createBrowserRouter([
         element: <ReferancePage />,
       },
       {
-        path : PATH_PAGE.kvkk,
-        element : <KVKKPage />
-      }
+        path: PATH_PAGE.kvkk,
+        element: <KVKKPage />,
+      },
+      {
+        path: PATH_PAGE.secretPolicy,
+        element: <SecretPolicyPage />,
+      },
     ],
   },
-])
+]);
 
-export default router
+export default router;

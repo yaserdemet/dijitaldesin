@@ -51,7 +51,7 @@ const linkColumns = [
   {
     title: "Yasal",
     links: [
-      { label: "Gizlilik Politikası", to: "#" },
+      { label: "Gizlilik Politikası", to: "/secret-policy" },
       { label: "İş Ortaklığı", to: "#" },
       { label: "KVKK", to: "/kvkk" },
     ],
@@ -107,7 +107,7 @@ const Footer = () => {
           {/* Bağlantı Sütunları */}
           {linkColumns.map((column) => (
             <div key={column.title} className="space-y-4">
-              <h3 className="text-gray-900 font-semibold text-lg border-l-3 border-l-zinc-600 pl-2">
+              <h3 className="text-gray-900 font-semibold text-lg border-l-3 border-l-[var(--primary-color)] pl-2">
                 {column.title}
               </h3>
 

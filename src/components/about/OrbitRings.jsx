@@ -21,7 +21,7 @@ const OrbitRings = () => {
           cy="250"
           r={ring.r}
           fill="none"
-          stroke="#c7c7c7"
+          stroke="#b6b5b5"
           strokeWidth={ring.strokeWidth}
           opacity={ring.opacity}
         />

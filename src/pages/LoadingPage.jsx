@@ -24,7 +24,7 @@ const LoadingPage = () => {
       {visible && (
         <div className="animate-loader-in flex flex-col items-center gap-7">
           <div className="h-1 w-48 overflow-hidden rounded-full bg-gray-200">
-            <div className="h-full w-1/3 rounded-full bg-black animate-loader-bar" />
+            <div className="h-full w-1/3 rounded-full bg-(--primary-color) animate-loader-bar" />
           </div>
 
           <p className="animate-loader-text text-sm font-semibold tracking-wide text-gray-500">
