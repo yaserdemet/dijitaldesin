@@ -39,10 +39,9 @@ const variants = {
 };
 
 const itemClass =
-  "flex items-center justify-center gap-2 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer";
+  "flex items-center justify-center gap-2 cursor-pointer";
 
-// Tailwind sinif adlarini calisma aninda uretemedigimiz icin
-// izin verilen degerler burada sabit duruyor.
+
 const gridColsClass = {
   1: "grid-cols-1",
   2: "grid-cols-2",
@@ -50,10 +49,7 @@ const gridColsClass = {
   4: "grid-cols-4",
 };
 
-// Sutun sayisi hem izgarayi hem de verinin kac parcaya bolunecegini
-// belirliyor; bu yuzden CSS breakpoint'i yetmiyor, kirilimi JS'te
-// okumamiz gerekiyor. resize yerine matchMedia kullaniliyor:
-// yalnizca esik gecildiginde tetikleniyor, debounce gerektirmiyor.
+
 const MOBILE_QUERY = "(max-width: 767px)";
 
 const useIsMobile = () => {
@@ -130,7 +126,7 @@ const Carosuel = ({
 
       {isVertical ? (
         <div
-          className={`mx-auto grid max-w-5xl ${gridColsClass[columnCount]} gap-6 overflow-hidden border-y border-slate-200 bg-slate-50/50 [mask-image:linear-gradient(to_bottom,transparent,black_12%,black_88%,transparent)]`}
+          className={`mx-auto grid max-w-5xl ${gridColsClass[columnCount]} gap-6 overflow-hidden `}
           style={{ height: verticalHeight }}
         >
           {tracks.map((track, column) => {
@@ -145,7 +141,7 @@ const Carosuel = ({
                   style={{ animationDuration: `${verticalDuration}s` }}
                 >
                   {/* Kesintisiz döngü için içerik iki kez basılıyor */}
-                  {[...track, ...track].map((item, index) => (
+                  {[...track].map((item, index) => (
                     <div
                       key={`${item.name}-${index}`}
                       className={`px-3 py-6 ${itemClass}`}
@@ -165,10 +161,10 @@ const Carosuel = ({
           gradientColor="#ffffff"
           gradientWidth={80}
           pauseOnHover={true}
-          className="py-12 border-y border-slate-200 bg-slate-50/50"
+          className="py-12"
         >
           {items.map((item, index) => (
-            <div key={`${item.name}-${index}`} className={`mx-8 ${itemClass}`}>
+            <div key={`${item.name}-${index}`} className={`mx-10 md:mx-16 ${itemClass}`}>
               <LogoItem item={item} logoHeight={resolvedLogoHeight} />
             </div>
           ))}

@@ -79,7 +79,7 @@ const RevenueSection = () => {
                     </span>
                     <span
                       className="inline-flex items-center text-xs text-gray-700 font-semibold px-2 py-0.5 rounded-full"
-                      style={{ backgroundColor: 'var(--primary-color)' }}
+                      style={{ backgroundColor: 'var(--third-color)' }}
                     >
                       +96 gün
                     </span>
@@ -104,12 +104,12 @@ const RevenueSection = () => {
                       >
                         <stop
                           offset="5%"
-                          stopColor="rgb(163,230,53)"
+                          stopColor="rgb(56, 189, 248)"
                           stopOpacity={0.5}
                         />
                         <stop
                           offset="95%"
-                          stopColor="rgb(163,230,53)"
+                          stopColor="rgb(56, 189, 248)"
                           stopOpacity={0}
                         />
                       </linearGradient>
@@ -126,7 +126,7 @@ const RevenueSection = () => {
                     <Area
                       type="monotone"
                       dataKey="gelir"
-                      stroke="rgb(63,98,18)"
+                      stroke=" rgb(6, 151, 212)"
                       strokeWidth={2.5}
                       fillOpacity={1}
                       fill="url(#colorGelir)"

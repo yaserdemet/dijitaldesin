@@ -20,6 +20,8 @@ const Home = () => {
 
         <FirstSection />
         <ChartsSection />
+      <Counts />
+
       </main>
 
       <Carosuel variant="brands" />
@@ -34,7 +36,6 @@ const Home = () => {
       />
 
       <LaunchCTA />
-      <Counts />
     </>
   );
 };
