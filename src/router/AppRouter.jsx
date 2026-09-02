@@ -1,12 +1,13 @@
 import { createBrowserRouter } from "react-router-dom"
 import Layout from "../layout/Layout"
-import { HomePage, AboutPage, ServicesPage, ContactPage, ReferancePage } from "./element.jsx"
+import { HomePage, AboutPage, ServicesPage, ContactPage, ReferancePage, ErrorPage, KVKKPage } from "./element.jsx"
 import { PATH_PAGE } from "./path"
 
 const router = createBrowserRouter([
   {
     path: PATH_PAGE.root,
     element: <Layout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         index: true,
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
         path: PATH_PAGE.referances,
         element: <ReferancePage />,
       },
+      {
+        path : PATH_PAGE.kvkk,
+        element : <KVKKPage />
+      }
     ],
   },
 ])

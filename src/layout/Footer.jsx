@@ -1,7 +1,68 @@
+import { Fragment } from "react";
 import { Link } from "react-router-dom";
+import { Icon } from "@iconify/react";
 import DijitalDesinLogo from "../assets/digi1.png";
 import Cards from "../assets/cards.svg";
-import { Icon } from "@iconify/react";
+
+const linkClass = "text-gray-600 hover:text-gray-900 transition text-sm";
+
+const socialLinks = [
+  {
+    label: "Facebook",
+    href: "https://facebook.com",
+    icon: "mynaui:facebook",
+    hover: "hover:bg-blue-100 hover:border-blue-300 hover:text-blue",
+  },
+  {
+    label: "Instagram",
+    href: "https://instagram.com",
+    icon: "mynaui:instagram",
+    hover: "hover:bg-pink-100 hover:border-pink-300 hover:text-pink",
+  },
+  {
+    label: "LinkedIn",
+    href: "https://linkedin.com",
+    icon: "mynaui:linkedin",
+    hover: "hover:bg-blue-100 hover:border-blue-300 hover:text-blue",
+  },
+];
+
+const linkColumns = [
+  {
+    title: "Hizmetler",
+    links: [
+      { label: "Dijital Pazarlama", to: "/services" },
+      { label: "SEO Optimizasyonu", to: "/services" },
+      { label: "Sosyal Medya", to: "/services" },
+      { label: "Web Tasarımı", to: "/services" },
+      { label: "İçerik Pazarlaması", to: "/services" },
+    ],
+  },
+  {
+    title: "Şirket",
+    links: [
+      { label: "Hakkında", to: "/about" },
+      { label: "Neden Biz?", to: "/services" },
+      { label: "Blog", to: "/" },
+      { label: "Başarı Hikayeleri", to: "/" },
+      { label: "İletişim", to: "/contact" },
+    ],
+  },
+  {
+    title: "Yasal",
+    links: [
+      { label: "Gizlilik Politikası", to: "#" },
+      { label: "İş Ortaklığı", to: "#" },
+      { label: "KVKK", to: "/kvkk" },
+    ],
+  },
+];
+
+const bottomLinks = [
+  { label: "Gizlilik", to: "#" },
+  { label: "Şartlar", to: "#" },
+  { label: "Çerezler", to: "#" },
+];
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -28,193 +89,39 @@ const Footer = () => {
 
             {/* Sosyal Medya İkonları */}
             <div className="flex gap-3 pt-4">
-              {/* Facebook */}
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-                className="w-8 h-8 flex items-center justify-center rounded-lg shadow-lg bg-white text-gray-600 transition-colors duration-500 ease-in-out hover:bg-blue-100 border hover:border-blue-300 hover:text-blue"
-              >
-                <Icon icon="mynaui:facebook" className="w-5 h-5" />
-              </a>
-
-              {/* Instagram */}
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="w-8 h-8 flex items-center justify-center rounded-lg shadow-lg bg-white text-gray-600 transition-colors duration-500 ease-in-out hover:bg-pink-100 border hover:border-pink-300 hover:text-pink"
-              >
-                <Icon icon="mynaui:instagram" className="w-5 h-5" />
-              </a>
-
-              {/* LinkedIn */}
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                className="w-8 h-8 flex items-center justify-center rounded-lg shadow-lg bg-white text-gray-600 transition-colors duration-500 ease-in-out hover:bg-blue-100 border hover:border-blue-300 hover:text-blue"
-              >
-                <Icon icon="mynaui:linkedin" className="w-5 h-5" />
-              </a>
+              {socialLinks.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
+                  className={`w-8 h-8 flex items-center justify-center rounded-lg shadow-lg bg-white text-gray-600 border transition-colors duration-500 ease-in-out ${social.hover}`}
+                >
+                  <Icon icon={social.icon} className="w-5 h-5" />
+                </a>
+              ))}
             </div>
           </div>
 
-          {/* Hizmetler */}
-          <div className="space-y-4">
-            <h3 className="text-gray-900 font-semibold text-lg border-l-3 border-l-zinc-600 pl-2">
-              Hizmetler
-            </h3>
+          {/* Bağlantı Sütunları */}
+          {linkColumns.map((column) => (
+            <div key={column.title} className="space-y-4">
+              <h3 className="text-gray-900 font-semibold text-lg border-l-3 border-l-zinc-600 pl-2">
+                {column.title}
+              </h3>
 
-            <ul className="space-y-3">
-              <li>
-                <Link
-                  to="/services"
-                  className="text-gray-600 hover:text-gray-900 transition text-sm"
-                >
-                  Dijital Pazarlama
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  to="/services"
-                  className="text-gray-600 hover:text-gray-900 transition text-sm"
-                >
-                  SEO Optimizasyonu
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  to="/services"
-                  className="text-gray-600 hover:text-gray-900 transition text-sm"
-                >
-                  Sosyal Medya
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  to="/services"
-                  className="text-gray-600 hover:text-gray-900 transition text-sm"
-                >
-                  Web Tasarımı
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  to="/services"
-                  className="text-gray-600 hover:text-gray-900 transition text-sm"
-                >
-                  İçerik Pazarlaması
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Şirket */}
-          <div className="space-y-4">
-            <h3 className="text-gray-900 font-semibold text-lg border-l-3 border-l-zinc-600 pl-2">
-              Şirket
-            </h3>
-
-            <ul className="space-y-3">
-              <li>
-                <Link
-                  to="/about"
-                  className="text-gray-600 hover:text-gray-900 transition text-sm"
-                >
-                  Hakkında
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  to="/services"
-                  className="text-gray-600 hover:text-gray-900 transition text-sm"
-                >
-                  Neden Biz?
-                </Link>
-              </li>
-
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-600 hover:text-gray-900 transition text-sm"
-                >
-                  Blog
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-600 hover:text-gray-900 transition text-sm"
-                >
-                  Başarı Hikayeleri
-                </a>
-              </li>
-
-              <li>
-                <Link
-                  to="/contact"
-                  className="text-gray-600 hover:text-gray-900 transition text-sm"
-                >
-                  İletişim
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Yasal */}
-          <div className="space-y-4">
-            <h3 className="text-gray-900 font-semibold text-lg border-l-3 border-l-zinc-600 pl-2">
-              Yasal
-            </h3>
-
-            <ul className="space-y-3">
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-600 hover:text-gray-900 transition text-sm"
-                >
-                  Gizlilik Politikası
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-600 hover:text-gray-900 transition text-sm"
-                >
-                  Kullanım Şartları
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-600 hover:text-gray-900 transition text-sm"
-                >
-                  Çerez Politikası
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-600 hover:text-gray-900 transition text-sm"
-                >
-                  İş Ortaklığı
-                </a>
-              </li>
-            </ul>
-          </div>
+              <ul className="space-y-3">
+                {column.links.map((link) => (
+                  <li key={link.label}>
+                    <Link to={link.to} className={linkClass}>
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
 
         {/* Bottom Footer */}
@@ -229,30 +136,22 @@ const Footer = () => {
             </p>
           </div>
           <div>
-            <img src={Cards} />
+            <img src={Cards} alt="Kabul edilen ödeme yöntemleri" />
           </div>
 
-          <div className="flex gap-6">
-            <a
-              href="#"
-              className="text-gray-600 hover:text-gray-900 transition text-sm"
-            >
-              Gizlilik &nbsp; &nbsp; &nbsp;|
-            </a>
-
-            <a
-              href="#"
-              className="text-gray-600 hover:text-gray-900 transition text-sm"
-            >
-              Şartlar &nbsp; &nbsp; &nbsp;|
-            </a>
-
-            <a
-              href="#"
-              className="text-gray-600 hover:text-gray-900 transition text-sm"
-            >
-              Çerezler
-            </a>
+          <div className="flex items-center gap-4">
+            {bottomLinks.map((link, index) => (
+              <Fragment key={link.label}>
+                <Link to={link.to} className={linkClass}>
+                  {link.label}
+                </Link>
+                {index < bottomLinks.length - 1 && (
+                  <span aria-hidden="true" className="text-gray-300">
+                    |
+                  </span>
+                )}
+              </Fragment>
+            ))}
           </div>
         </div>
       </div>

@@ -171,3 +171,63 @@ body {
   opacity: 0;
   animation: highlightCursor 2s ease-out infinite;
 }
+
+/* ---- Sayfa yükleme ekranı ----
+   Hepsi transform/opacity üzerinden çalışıyor, layout tetiklemiyor. */
+
+/* Loader aniden belirmesin, yumuşakça yerine otursun. */
+@keyframes loaderIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-loader-in {
+  animation: loaderIn 0.4s ease-out forwards;
+}
+
+/* Halka sabit hızda dönsün; ease kullanılırsa her turda takılıyormuş gibi
+   duruyor, bu yüzden linear. */
+@keyframes loaderRing {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-loader-ring {
+  animation: loaderRing 0.9s linear infinite;
+}
+
+/* Belirsiz ilerleme çubuğu: raydan raya kayan tek bir şerit. */
+@keyframes loaderBar {
+  0% {
+    transform: translateX(-110%);
+  }
+  100% {
+    transform: translateX(310%);
+  }
+}
+
+.animate-loader-bar {
+  animation: loaderBar 1.4s ease-in-out infinite;
+}
+
+/* Metin nefes alsın. */
+@keyframes loaderText {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-loader-text {
+  animation: loaderText 1.6s ease-in-out infinite;
+}
