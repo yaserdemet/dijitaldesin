@@ -11,16 +11,17 @@ import {
   AreaChart,
   Area,
   Tooltip,
+  XAxis,
 } from "recharts";
 
 const dataTrafik = [
-  { day: "Pzt", value: 280 },
-  { day: "Sal", value: 320 },
-  { day: "Çar", value: 260 },
-  { day: "Per", value: 400 },
-  { day: "Cum", value: 350 },
-  { day: "Cmt", value: 210 },
-  { day: "Paz", value: 130 },
+  { day: "Pzt", gün: 280 },
+  { day: "Sal", gün: 320 },
+  { day: "Çar", gün: 260 },
+  { day: "Per", gün: 400 },
+  { day: "Cum", gün: 350 },
+  { day: "Cmt", gün: 210 },
+  { day: "Paz", gün: 130 },
 ];
 
 const dataKanallar = [
@@ -31,24 +32,24 @@ const dataKanallar = [
 
 const dataDonusum = [
   { ay: "Oca", oran: 12 },
-  { ay: "Şub", oran: 58 },
-  { ay: "Mar", oran: 22 },
-  { ay: "Nis", oran: 78 },
-  { ay: "May", oran: 85 },
-  { ay: "Haz", oran: 10 },
+  { ay: "Şub", oran: 30 },
+  { ay: "Mar", oran: 35 },
+  { ay: "Nis", oran: 42 },
+  { ay: "May", oran: 53 },
+  { ay: "Haz", oran: 74 },
 ];
 
 const ChartsSection = () => {
   return (
-    <div className="relative z-10 max-w-7xl mx-auto px-4 py-8">
-      <p className="font-bold text-4xl text-center mb-8 ">
+    <div className="max-w-7xl mx-auto px-4 py-8">
+      <p className="font-bold text-4xl text-center mb-8 z-10 relative">
         {" "}
         <HighlightText>Veriyle Desteklenen</HighlightText> <br /> Stratejik
         Kararlar
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {/* Card 1: Günlük Trafik (BarChart) */}
-        <div className="group relative rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-blue-300 flex flex-col justify-between">
+        <div className="group relative rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-xl hover:border-blue-300 flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between mb-2">
               <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">
@@ -56,7 +57,7 @@ const ChartsSection = () => {
               </span>
               <Icon
                 icon="solar:graph-bold-duotone"
-                className="w-5 h-5 text-blue-500 transition-transform group-hover:scale-110"
+                className="w-5 h-5 text-(--primary-color) transition-transform group-hover:scale-110"
               />
             </div>
             <p className="text-sm font-medium text-slate-600">
@@ -69,9 +70,16 @@ const ChartsSection = () => {
               </span>
             </div>
           </div>
-          <div className="w-full h-28">
+          <div className="w-full h-32">
             <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={dataTrafik}>
+              <BarChart data={dataTrafik} margin={{ top: 5, right: 0, left: 0, bottom: 0 }}>
+                <XAxis
+                  dataKey="day"
+                  tickLine={false}
+                  axisLine={false}
+                  tick={{ fill: "#94a3b8", fontSize: 11, fontWeight: 500 }}
+                  dy={4}
+                />
                 <Tooltip
                   contentStyle={{
                     backgroundColor: "#0f172a",
@@ -83,10 +91,10 @@ const ChartsSection = () => {
                   cursor={{ fill: "rgba(226, 232, 240, 0.4)" }}
                 />
                 <Bar
-                  dataKey="value"
-                  fill="#3b82f6"
-                  radius={[6, 6, 0, 0]}
-                  className="transition-all duration-300 group-hover:fill-blue-600"
+                  dataKey="gün"
+                  fill="#9CA3AF"
+                  radius={[8, 8, 8, 8]}
+                  className="transition-all duration-300 hover:fill-zinc-900"
                 />
               </BarChart>
             </ResponsiveContainer>
@@ -94,7 +102,7 @@ const ChartsSection = () => {
         </div>
 
         {/* Card 2: Kanal Dağılımı (PieChart) */}
-        <div className="group relative rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-emerald-300 flex flex-col justify-between">
+        <div className="group relative rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-xl hover:border-emerald-300 flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between mb-2">
               <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">
@@ -155,7 +163,7 @@ const ChartsSection = () => {
         </div>
 
         {/* Card 3: Satış Dönüşüm Oranı (AreaChart) */}
-        <div className="group relative rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-indigo-300 flex flex-col justify-between">
+        <div className="group relative rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-xl hover:border-indigo-300 flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between mb-2">
               <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">
@@ -177,9 +185,17 @@ const ChartsSection = () => {
             </div>
           </div>
 
-          <div className="w-full h-28">
+          <div className="w-full h-32">
             <ResponsiveContainer width="100%" height="100%">
-              <AreaChart data={dataDonusum}>
+              <AreaChart data={dataDonusum} margin={{ top: 5, right: 12, left: 12, bottom: 0 }}>
+                <XAxis
+                  dataKey="ay"
+                  interval={0}
+                  tickLine={false}
+                  axisLine={false}
+                  tick={{ fill: "#94a3b8", fontSize: 11, fontWeight: 500 }}
+                  dy={4}
+                />
                 <defs>
                   <linearGradient id="colorDonusum" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="5%" stopColor="#6366f1" stopOpacity={0.3} />

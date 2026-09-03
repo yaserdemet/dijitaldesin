@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import Logo from "../assets/digi1.png";
+import { Icon } from "@iconify/react";
 
 const NAV_LINKS = [
   { label: "Anasayfa", path: "/" },
@@ -12,10 +13,14 @@ const NAV_LINKS = [
 
 const NAV_STYLES = {
   link: "text-gray-700 hover:text-black hover:bg-gray-100 p-2 rounded-lg transition-colors duration-300 ease-in-out text-sm",
-  activeLink: "text-black bg-(--third-color) p-2 rounded-lg text-sm font-semibold",
-  mobileLink: "text-black hover:text-(--primary-color) transition font-medium px-2 py-2 rounded hover:bg-gray-100",
-  activeMobileLink: "text-(--primary-color) transition font-medium px-2 py-2 rounded bg-gray-100",
-  ctaButton: "bg-zinc-900 text-white px-6 py-2 rounded-lg hover:shadow-lg transition font-medium",
+  activeLink:
+    "text-black bg-(--third-color) p-2 rounded-lg text-sm font-semibold",
+  mobileLink:
+    "text-black hover:text-(--primary-color) transition font-medium px-2 py-2 rounded hover:bg-gray-100",
+  activeMobileLink:
+    "text-(--primary-color) transition font-medium px-2 py-2 rounded bg-gray-100",
+  ctaButton:
+    "bg-zinc-900 text-white px-6 py-2 rounded-lg hover:shadow-lg transition font-medium",
 };
 
 const Navbar = () => {
@@ -49,9 +54,14 @@ const Navbar = () => {
           <div className="flex items-center gap-4">
             <NavLink
               to="/contact"
-              className="hidden md:inline-block bg-zinc-900 text-white px-6 py-2 rounded-lg hover:shadow-lg transition font-medium"
+              className="hidden  md:flex md:items-center md:align-middle gap-2 bg-zinc-900 text-white px-6 py-2 rounded-lg hover:shadow-lg transition font-medium"
             >
-              Sizi Arayalım
+              Sizi Arayalım{" "}
+              <Icon
+                icon="line-md:phone-call-loop"
+                className="text-white inline"
+                height="1em"
+              />
             </NavLink>
 
             {/* Mobile Menu Button */}
@@ -86,7 +96,9 @@ const Navbar = () => {
                   key={link.path}
                   to={link.path}
                   className={({ isActive }) =>
-                    isActive ? NAV_STYLES.activeMobileLink : NAV_STYLES.mobileLink
+                    isActive
+                      ? NAV_STYLES.activeMobileLink
+                      : NAV_STYLES.mobileLink
                   }
                   onClick={() => setIsMenuOpen(false)}
                 >
