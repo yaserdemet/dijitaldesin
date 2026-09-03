@@ -1,38 +1,42 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 
-const Seo = ({ title, description }) => {
+const SITE_NAME = "DijitalDesin";
+const SITE_URL = "https://www.dijitaldesin.com";
+const DEFAULT_OG_IMAGE = "/og-image.png";
+
+// Etiket varsa günceller, yoksa oluşturur
+const setMeta = (attribute, key, content) => {
+  if (!content) return;
+
+  let tag = document.head.querySelector(`meta[${attribute}="${key}"]`);
+  if (!tag) {
+    tag = document.createElement("meta");
+    tag.setAttribute(attribute, key);
+    document.head.appendChild(tag);
+  }
+  tag.setAttribute("content", content);
+};
+
+const Seo = ({ title, description, image }) => {
   useEffect(() => {
-    // Başlığı güncelle
-    document.title = `Dijitaldesin | ${title}`;
+    const fullTitle = `Dijitaldesin | ${title}`;
+    const pageUrl = `${SITE_URL}${window.location.pathname}`;
+    const imageUrl = new URL(image || DEFAULT_OG_IMAGE, SITE_URL).href;
 
-    // Meta description
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (!metaDescription) {
-      metaDescription = document.createElement("meta");
-      metaDescription.setAttribute("name", "description");
-      document.head.appendChild(metaDescription);
-    }
-    metaDescription.setAttribute("content", description);
+    document.title = fullTitle;
 
-    // OG Title
-    let ogTitle = document.querySelector('meta[property="og:title"]');
-    if (!ogTitle) {
-      ogTitle = document.createElement("meta");
-      ogTitle.setAttribute("property", "og:title");
-      document.head.appendChild(ogTitle);
-    }
-    ogTitle.setAttribute("content", title);
+    setMeta("name", "description", description);
 
-    // OG Description
-    let ogDescription = document.querySelector('meta[property="og:description"]');
-    if (!ogDescription) {
-      ogDescription = document.createElement("meta");
-      ogDescription.setAttribute("property", "og:description");
-      document.head.appendChild(ogDescription);
-    }
-    ogDescription.setAttribute("content", description);
-
-  }, [title, description]);
+    // Open Graph
+    setMeta("property", "og:type", "website");
+    setMeta("property", "og:site_name", SITE_NAME);
+    setMeta("property", "og:locale", "tr_TR");
+    setMeta("property", "og:title", fullTitle);
+    setMeta("property", "og:description", description);
+    setMeta("property", "og:url", pageUrl);
+    setMeta("property", "og:image", imageUrl);
+    setMeta("property", "og:image:alt", SITE_NAME);
+  }, [title, description, image]);
 
   return null;
 };
