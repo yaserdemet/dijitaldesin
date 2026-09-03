@@ -38,16 +38,12 @@ const FirstSection = () => {
               Anında Yanıt
             </p>
             <p className="font-bold text-gray-900 text-3xl md:text-4xl lg:text-5xl flex items-center justify-center lg:justify-start gap-3 flex-wrap">
-              Artan{" "}
-              <span className="px-4 py-2  rounded-xl  min-w-[140px] text-center">
-               <HighLightText>{reklam}</HighLightText>
-              </span>
+              Artan <HighLightText>{reklam}</HighLightText>
             </p>
           </div>
           <div className="flex flex-col gap-4 lg:flex-row">
-
-        <button
-            className="  px-6 py-3
+            <button
+              className="  px-6 py-3
   rounded-xl
   bg-black
   text-white
@@ -57,11 +53,11 @@ const FirstSection = () => {
   duration-300
   hover:shadow-xl
   hover:-translate-y-1"
-          >
-            Bizimle İletişime Geçin
-          </button>
-          <button
-            className="  px-6 py-3
+            >
+              Bizimle İletişime Geçin
+            </button>
+            <button
+              className="  px-6 py-3
   rounded-xl
   bg-white
   text-black
@@ -71,12 +67,11 @@ const FirstSection = () => {
   duration-300
   hover:shadow-xl
   hover:-translate-y-1"
-          >
-            <Icon icon="akar-icons:phone" className="w-4 h-4 inline" /> Sizi
-            Arayalım
-          </button>
+            >
+              <Icon icon="akar-icons:phone" className="w-4 h-4 inline" /> Sizi
+              Arayalım
+            </button>
           </div>
-  
         </div>
 
         {/* Sağ Kolon (Web'de 2. Kolon, Mobilde Alt Satır) */}

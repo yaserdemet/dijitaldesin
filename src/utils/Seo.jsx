@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 
 const SITE_NAME = "DijitalDesin";
-const SITE_URL = "https://www.dijitaldesin.com";
 const DEFAULT_OG_IMAGE = "/og-image.png";
 
 // Etiket varsa günceller, yoksa oluşturur
@@ -25,8 +24,10 @@ const removeMeta = (attribute, key) => {
 const Seo = ({ title, description, image }) => {
   useEffect(() => {
     const fullTitle = `Dijitaldesin | ${title}`;
-    const pageUrl = `${SITE_URL}${window.location.pathname}`;
-    const imageUrl = new URL(image || DEFAULT_OG_IMAGE, SITE_URL).href;
+    // Adresi sabitlemek yerine sitenin gercekte yayinlandigi origin kullanilir
+    const origin = window.location.origin;
+    const pageUrl = `${origin}${window.location.pathname}`;
+    const imageUrl = new URL(image || DEFAULT_OG_IMAGE, origin).href;
 
     document.title = fullTitle;
 
