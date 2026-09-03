@@ -20,4 +20,5 @@ export default defineConfig({
       transformIndexHtml: (html) => html.replaceAll("%SITE_URL%", siteUrl),
     },
   ],
+  sourceMap: false,
 });

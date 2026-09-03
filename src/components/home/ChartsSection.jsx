@@ -20,8 +20,7 @@ const dataTrafik = [
   { day: "Çar", gün: 260 },
   { day: "Per", gün: 400 },
   { day: "Cum", gün: 350 },
-  { day: "Cmt", gün: 210 },
-  { day: "Paz", gün: 130 },
+
 ];
 
 const dataKanallar = [
@@ -31,12 +30,11 @@ const dataKanallar = [
 ];
 
 const dataDonusum = [
-  { ay: "Oca", oran: 12 },
-  { ay: "Şub", oran: 30 },
-  { ay: "Mar", oran: 35 },
-  { ay: "Nis", oran: 42 },
-  { ay: "May", oran: 53 },
-  { ay: "Haz", oran: 74 },
+  { ay: "Nis", oran: 20 },
+  { ay: "May", oran: 35 },
+  { ay: "Haz", oran: 44 },
+  { ay: "Tem", oran: 52 },
+  { ay: "Agus", oran: 80 },
 ];
 
 const ChartsSection = () => {

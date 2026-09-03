@@ -11,16 +11,17 @@ const LaunchCTA = () => {
         <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
           Dijital Çözümünüzü{" "}
           <span className="relative inline-block cursor-highlight-wrapper">
-            5 Dakikada
+            Birlikte
             <span className="cursor-highlight"></span>
             <span className="cursor-pointer"></span>
           </span>{" "}
-          Çalıştırın
+          Tasarlayalım
         </h2>
 
         <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto font-light">
-          Kısa bir demolu gösterim ile DijitalDesin'in işletmenizi nasıl
-          dönüştürebileceğini görün. Daha fazla sonuç, daha az çaba.
+          Kısa bir keşif görüşmesinde markanızı analiz ediyor, size özel bir
+          dijital büyüme yol haritası çıkarıyoruz. Daha fazla sonuç, daha az
+          çaba.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

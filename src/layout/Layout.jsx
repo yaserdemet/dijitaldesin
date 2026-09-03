@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import ErrorBoundary from "../components/ErrorBoundary";
 import { Icon } from "@iconify/react";
 
 const Layout = () => {
@@ -19,7 +20,9 @@ const Layout = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-1">
-        <Outlet />
+        <ErrorBoundary>
+          <Outlet />
+        </ErrorBoundary>
       </main>
       <button
         onMouseEnter={() => setShowText(true)}
