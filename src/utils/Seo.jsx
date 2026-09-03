@@ -17,6 +17,11 @@ const setMeta = (attribute, key, content) => {
   tag.setAttribute("content", content);
 };
 
+const removeMeta = (attribute, key) => {
+  const tag = document.head.querySelector(`meta[${attribute}="${key}"]`);
+  if (tag) tag.remove();
+};
+
 const Seo = ({ title, description, image }) => {
   useEffect(() => {
     const fullTitle = `Dijitaldesin | ${title}`;
@@ -36,6 +41,15 @@ const Seo = ({ title, description, image }) => {
     setMeta("property", "og:url", pageUrl);
     setMeta("property", "og:image", imageUrl);
     setMeta("property", "og:image:alt", SITE_NAME);
+
+    // Olculer yalnizca varsayilan gorsel icin gecerli
+    if (image) {
+      removeMeta("property", "og:image:width");
+      removeMeta("property", "og:image:height");
+    } else {
+      setMeta("property", "og:image:width", "1200");
+      setMeta("property", "og:image:height", "630");
+    }
   }, [title, description, image]);
 
   return null;
