@@ -18,10 +18,6 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-        path : "*",
-        element : <ErrorPage />
-      },
-      {
         index: true,
         element: <HomePage />,
       },
@@ -48,6 +44,10 @@ const router = createBrowserRouter([
       {
         path: PATH_PAGE.secretPolicy,
         element: <SecretPolicyPage />,
+      },
+      {
+        path: "*",
+        element: <ErrorPage />,
       },
     ],
   },
