@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Marquee from "react-fast-marquee";
 import { Icon } from "@iconify/react";
 import ticimaxLogo from "../../assets/ticimax-logo.svg";
-import ikasLogo from "../../assets/ikas-logo.webp";
+import ikasLogo from "../../assets/ikas-logo.svg";
 
 const MarqueeComponent =
   typeof Marquee === "function" ? Marquee : Marquee?.default || Marquee;

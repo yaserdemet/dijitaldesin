@@ -1,4 +1,4 @@
-import Logo from "../../assets/digi1.png";
+import Logo from "../../assets/digi1.svg";
 
 const CenterLogo = () => {
   return (

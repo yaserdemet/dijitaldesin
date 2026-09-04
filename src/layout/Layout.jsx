@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, ScrollRestoration } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import ErrorBoundary from "../components/ErrorBoundary";
@@ -39,6 +39,13 @@ const Layout = () => {
         </div>
       )}
       <Footer />
+
+      {/* Bir önceki sayfadaki yerini hatırlamak için ScrollRestoration bileşenini kullanabilirsin. Bu, kullanıcı sayfalar arasında gezinirken kaydırma konumunu korur. */}
+      {/* <ScrollRestoration
+        getKey={(location) => {
+          return location.pathname;
+        }}
+      /> */}
     </div>
   );
 };

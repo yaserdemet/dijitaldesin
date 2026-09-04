@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
-import Logo from "../assets/digi1.png";
+import Logo from "../assets/digi1.svg";
 import { Icon } from "@iconify/react";
 
 const NAV_LINKS = [

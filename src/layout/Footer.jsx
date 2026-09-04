@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
-import DijitalDesinLogo from "../assets/digi1.png";
+import DijitalDesinLogo from "../assets/digi1.svg";
 import Cards from "../assets/cards.svg";
 
 const linkClass = "text-gray-600 hover:text-gray-900 transition text-sm";
