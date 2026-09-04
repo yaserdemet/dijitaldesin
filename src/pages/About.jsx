@@ -1,6 +1,6 @@
 import Seo from "../utils/Seo";
 import TicimaxLogo from "../assets/ticimax-logo.svg?url";
-import IkasLogo from "../assets/ikas-logo.webp";
+import IkasLogo from "../assets/ikas-logo.svg";
 import AboutContent from "../components/about/AboutContent";
 import OrbitLogos from "../components/about/OrbitLogos";
 import MissionList from "../components/about/MissionList";
