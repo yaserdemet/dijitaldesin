@@ -32,7 +32,13 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <NavLink to="/" className="flex items-center flex-shrink-0">
-            <img src={Logo} width="180" alt="DijitalDesin" />
+            <img
+              src={Logo}
+              width="180"
+              height="62"
+              decoding="async"
+              alt="DijitalDesin"
+            />
           </NavLink>
 
           {/* Desktop Menu */}

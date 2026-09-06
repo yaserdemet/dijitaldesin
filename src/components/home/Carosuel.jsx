@@ -75,6 +75,8 @@ const LogoItem = ({ item, logoHeight }) => (
       <img
         src={item.src}
         alt={item.name}
+        loading="lazy"
+        decoding="async"
         className={`${logoHeight} w-auto max-w-full object-contain`}
         onError={(e) => {
           e.currentTarget.style.display = "none";

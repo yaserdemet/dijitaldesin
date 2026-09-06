@@ -145,7 +145,13 @@ const RevenueSection = () => {
               }`}
             >
               <div className="w-11 h-11 rounded-full bg-white flex items-center justify-center flex-shrink-0">
-                <img src={Logo} alt="DijitalDesin" className="w-7 h-auto" />
+                <img
+                  src={Logo}
+                  alt="DijitalDesin"
+                  loading="lazy"
+                  decoding="async"
+                  className="w-7 h-auto"
+                />
               </div>
               <div>
                 <p className="text-sm font-bold leading-tight">
