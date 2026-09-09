@@ -26,7 +26,7 @@ const MissionList = () => {
   ];
   return (
     <>
-      <section className="grid grid-cols-2 gap-4 mt-24">
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-24">
         <div>
           <div className="inline-block mb-12">
             <span className="px-4 py-2 border border-gray-300 rounded-full text-sm font-semibold text-gray-700">

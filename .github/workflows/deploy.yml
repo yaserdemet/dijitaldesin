@@ -1,0 +1,35 @@
+name: Deploy React to Natro
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Projeyi indir
+        uses: actions/checkout@v4
+
+      - name: Node.js kurulumu
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Paketleri yükle
+        run: npm ci
+
+      - name: React projesini build et
+        run: npm run build
+
+      - name: Natro'ya yükle
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ dijitaldesin.com }}
+          username: ${{ u2464842@basayarmuhendislik.com }}
+          password: ${{ =pQS.4x0X-6Lk=4a }}
+          server-dir: /public_html/
+          local-dir: ./dist/
