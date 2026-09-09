@@ -1,16 +1,41 @@
-# React + Vite
+# DijitalDesin
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Dijital danışmanlık ajansı web sitesi. React 19 + Vite 8 + Tailwind CSS v4.
 
-Currently, two official plugins are available:
+## Geliştirme
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+npm install
+npm run dev        # http://localhost:5173
+```
 
-## React Compiler
+## Komutlar
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| Komut             | Açıklama                              |
+| ----------------- | ------------------------------------- |
+| `npm run dev`     | Geliştirme sunucusu (HMR)             |
+| `npm run build`   | Production derlemesi → `dist/`        |
+| `npm run preview` | `dist/` çıktısını yerelde önizle      |
+| `npm run lint`    | Oxlint                                |
 
-## Expanding the Oxlint configuration
+## Ortam Değişkenleri
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+Zorunlu değildir. Open Graph / canonical mutlak adresleri için site kökü şu
+sırayla belirlenir: `VITE_SITE_URL` → Vercel production alan adı → o anki dağıtım
+→ `https://dijitaldesin.com` (yedek).
+
+Özel bir alan adı için Vercel proje ayarlarında:
+
+```
+VITE_SITE_URL = https://dijitaldesin.com
+```
+
+## Dağıtım (Vercel)
+
+- Framework preset: **Vite**
+- Build command: `npm run build`
+- Output directory: `dist`
+- SPA yönlendirmesi, güvenlik başlıkları ve asset cache politikası `vercel.json`
+  içinde tanımlıdır.
+- `public/robots.txt` ve `public/sitemap.xml` alan adına (`dijitaldesin.com`)
+  göre ayarlıdır; alan adı değişirse bu iki dosyayı da güncelleyin.

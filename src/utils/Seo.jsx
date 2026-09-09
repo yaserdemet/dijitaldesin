@@ -21,6 +21,17 @@ const removeMeta = (attribute, key) => {
   if (tag) tag.remove();
 };
 
+// <link rel="canonical"> etiketini gunceller, yoksa olusturur
+const setCanonical = (href) => {
+  let tag = document.head.querySelector('link[rel="canonical"]');
+  if (!tag) {
+    tag = document.createElement("link");
+    tag.setAttribute("rel", "canonical");
+    document.head.appendChild(tag);
+  }
+  tag.setAttribute("href", href);
+};
+
 const Seo = ({ title, description, image }) => {
   useEffect(() => {
     const fullTitle = `Dijitaldesin | ${title}`;
@@ -32,6 +43,7 @@ const Seo = ({ title, description, image }) => {
     document.title = fullTitle;
 
     setMeta("name", "description", description);
+    setCanonical(pageUrl);
 
     // Open Graph
     setMeta("property", "og:type", "website");
@@ -42,6 +54,12 @@ const Seo = ({ title, description, image }) => {
     setMeta("property", "og:url", pageUrl);
     setMeta("property", "og:image", imageUrl);
     setMeta("property", "og:image:alt", SITE_NAME);
+
+    // Twitter
+    setMeta("name", "twitter:card", "summary_large_image");
+    setMeta("name", "twitter:title", fullTitle);
+    setMeta("name", "twitter:description", description);
+    setMeta("name", "twitter:image", imageUrl);
 
     // Olculer yalnizca varsayilan gorsel icin gecerli
     if (image) {

@@ -1,5 +1,9 @@
 import { Component } from "react";
 
+// Ham hata/stack detaylari ve runtime hata kutusu yalnizca gelistirmede gorunur;
+// canli ortamda ziyaretciye sade bir mesaj gosterilir.
+const IS_DEV = import.meta.env.DEV;
+
 class ErrorBoundary extends Component {
   constructor(props) {
     super(props);
@@ -23,11 +27,13 @@ class ErrorBoundary extends Component {
   }
 
   componentDidMount() {
+    if (!IS_DEV) return;
     window.addEventListener("error", this.handleWindowError);
     window.addEventListener("unhandledrejection", this.handleRejection);
   }
 
   componentWillUnmount() {
+    if (!IS_DEV) return;
     window.removeEventListener("error", this.handleWindowError);
     window.removeEventListener("unhandledrejection", this.handleRejection);
   }
@@ -60,9 +66,9 @@ class ErrorBoundary extends Component {
   }
 
   render() {
-    const { error, errorInfo, runtimeErrors } = this.state;
+    const { error, runtimeErrors } = this.state;
     const hasRenderError = Boolean(error);
-    const hasRuntimeErrors = runtimeErrors.length > 0;
+    const hasRuntimeErrors = IS_DEV && runtimeErrors.length > 0;
 
     return (
       <>
@@ -80,22 +86,22 @@ class ErrorBoundary extends Component {
               </h1>
 
               <p className="text-lg text-gray-600 font-light mb-6">
-                Sayfa render edilirken bir hata oluştu. Aşağıda hatanın detayları
-                yer alıyor.
+                Beklenmedik bir hata oluştu. Lütfen sayfayı yenileyin veya ana
+                sayfaya dönün.
               </p>
 
-              <div className="bg-gray-100 border-2 border-gray-200 rounded-lg p-4 mb-4">
-                <p className="font-semibold text-gray-900 mb-2">
-                  {error?.name || "Error"}: {error?.message}
-                </p>
-                {error?.stack && (
-                  <pre className="text-xs text-gray-700 whitespace-pre-wrap break-words overflow-x-auto">
-                    {error.stack}
-                  </pre>
-                )}
-              </div>
-
-       
+              {IS_DEV && (
+                <div className="bg-gray-100 border-2 border-gray-200 rounded-lg p-4 mb-4">
+                  <p className="font-semibold text-gray-900 mb-2">
+                    {error?.name || "Error"}: {error?.message}
+                  </p>
+                  {error?.stack && (
+                    <pre className="text-xs text-gray-700 whitespace-pre-wrap break-words overflow-x-auto">
+                      {error.stack}
+                    </pre>
+                  )}
+                </div>
+              )}
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <button

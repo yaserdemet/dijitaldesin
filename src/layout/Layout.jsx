@@ -40,12 +40,8 @@ const Layout = () => {
       )}
       <Footer />
 
-      {/* Bir önceki sayfadaki yerini hatırlamak için ScrollRestoration bileşenini kullanabilirsin. Bu, kullanıcı sayfalar arasında gezinirken kaydırma konumunu korur. */}
-      {/* <ScrollRestoration
-        getKey={(location) => {
-          return location.pathname;
-        }}
-      /> */}
+      {/* Sayfa gecislerinde en uste don; ileri/geri navigasyonunda konumu geri yukle. */}
+      <ScrollRestoration />
     </div>
   );
 };

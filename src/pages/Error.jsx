@@ -3,7 +3,7 @@ import ErrorIcon from "../assets/error.svg?url";
 
 const Error = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-[20vh] bg-gray-100 px-6 py-4 text-center">
+    <div className="flex flex-col items-center justify-center min-h-[60vh] bg-gray-100 px-6 py-16 text-center">
       <img
         src={ErrorIcon}
         alt="Kopmuş bağlantı görseli"

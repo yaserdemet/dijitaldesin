@@ -40,6 +40,7 @@ const ContactInfo = () => {
     },
   ];
 
+
   return (
     <div>
       <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8">
@@ -69,7 +70,24 @@ const ContactInfo = () => {
           </a>
         ))}
       </div>
-      
+
+      <div className="mt-8">
+        <h3 className="text-lg font-bold text-gray-900 mb-4">Sosyal Medya</h3>
+        <div className="flex gap-3">
+          {socials.map((social) => (
+            <a
+              key={social.label}
+              href={social.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={social.label}
+              className="w-11 h-11 flex items-center justify-center rounded-xl bg-white border-2 border-gray-200 text-gray-900 shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-black"
+            >
+              <Icon icon={social.icon} className="w-5 h-5" />
+            </a>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

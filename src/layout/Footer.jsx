@@ -9,19 +9,19 @@ const linkClass = "text-gray-600 hover:text-gray-900 transition text-sm";
 const socialLinks = [
   {
     label: "Facebook",
-    href: "https://facebook.com",
+    href: "https://www.facebook.com/dijitaldesin",
     icon: "mynaui:facebook",
     hover: "hover:bg-blue-100 hover:border-blue-300 hover:text-blue",
   },
   {
     label: "Instagram",
-    href: "https://instagram.com",
+    href: "https://www.instagram.com/dijitaldesin.co/",
     icon: "mynaui:instagram",
     hover: "hover:bg-pink-100 hover:border-pink-300 hover:text-pink",
   },
   {
     label: "LinkedIn",
-    href: "https://linkedin.com",
+    href: "https://www.linkedin.com/company/dijitaldesin-reklam-ajansı/",
     icon: "mynaui:linkedin",
     hover: "hover:bg-blue-100 hover:border-blue-300 hover:text-blue",
   },
@@ -52,16 +52,16 @@ const linkColumns = [
     title: "Yasal",
     links: [
       { label: "Gizlilik Politikası", to: "/secret-policy" },
-      { label: "İş Ortaklığı", to: "#" },
+      { label: "İş Ortaklığı", to: "/contact" },
       { label: "KVKK", to: "/kvkk" },
     ],
   },
 ];
 
 const bottomLinks = [
-  { label: "Gizlilik", to: "#" },
-  { label: "Şartlar", to: "#" },
-  { label: "Çerezler", to: "#" },
+  { label: "Gizlilik", to: "/secret-policy" },
+  { label: "KVKK", to: "/kvkk" },
+  { label: "İletişim", to: "/contact" },
 ];
 
 const Footer = () => {
