@@ -33,7 +33,6 @@ const ContactForm = () => {
       email: "",
       phone: "",
       company: "",
-      subject: "",
       message: "",
       hasEcommerce: "",
     },
@@ -47,7 +46,6 @@ const ContactForm = () => {
     const details = [
       `Telefon: ${data.phone}`,
       `Firma: ${data.company || "-"}`,
-      `Konu: ${data.subject}`,
       `E-Ticaret sitesi: ${data.hasEcommerce === "yes" ? "Evet" : "Hayır"}`,
     ].join("\n");
 
@@ -61,7 +59,6 @@ const ContactForm = () => {
           email: data.email,
           phone: data.phone,
           company: data.company || "-",
-          subject: data.subject,
           hasEcommerce: data.hasEcommerce === "yes" ? "Evet" : "Hayır",
           time: new Date().toLocaleString("tr-TR"),
           message: `${data.message}
@@ -200,26 +197,6 @@ ${details}`,
               placeholder="Firma adınız"
             />
           </div>
-        </div>
-
-        <div>
-          <label
-            htmlFor="subject"
-            className="block text-gray-900 font-semibold mb-2 text-sm"
-          >
-            Konu *
-          </label>
-          <input
-            type="text"
-            id="subject"
-            {...register("subject", {
-              required: "Konu zorunludur",
-              minLength: { value: 3, message: "En az 3 karakter giriniz" },
-            })}
-            className={inputClass(errors.subject)}
-            placeholder="Mesaj konusu"
-          />
-          <ErrorText>{errors.subject?.message}</ErrorText>
         </div>
 
         <div>

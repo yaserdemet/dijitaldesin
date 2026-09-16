@@ -71,7 +71,7 @@ const Counts = () => {
   ];
 
   return (
-    <section className="bg-gray-50 py-20 lg:py-24 px-4">
+    <section className="py-20 lg:py-24 px-4">
       <main className="max-w-7xl mx-auto" ref={ref}>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((stat, index) => (

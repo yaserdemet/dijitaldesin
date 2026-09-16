@@ -14,10 +14,7 @@ const Contact = () => {
       <div className="py-16 md:py-24 px-4 relative">
         {/* Grid pattern arka plan */}
         <div
-          className="absolute inset-0
-    bg-[linear-gradient(to_right,#e5e7eb_1px,transparent_1px),linear-gradient(to_bottom,#e5e7eb_1px,transparent_1px)]
-    bg-[size:40px_40px]
-    [mask-image:radial-gradient(ellipse_at_center,black_50%,transparent_100%)]"
+          className="absolute inset-0"
         ></div>
 
         <div className="max-w-6xl mx-auto relative z-10">

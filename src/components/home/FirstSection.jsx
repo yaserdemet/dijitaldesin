@@ -1,7 +1,15 @@
 import { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
 import HighLightText from "../../utils/HighlightText";
-const REKLAM_VALUES = ["Değer", "Kazanç", "Satış", "Dönüşüm"];
+const REKLAM_VALUES = [
+  "Artan Satışlar",
+  "Yükselen Dönüşümler",
+  "Büyüyen Markalar",
+  "Güçlenen Reklamlar",
+  "Artan Gelirler",
+  "Yükselen Kazançlar",
+  "Hızlanan Büyüme",
+];
 
 const FirstSection = () => {
   const [reklam, setReklam] = useState(REKLAM_VALUES[0]);
@@ -18,8 +26,8 @@ const FirstSection = () => {
   }, []);
 
   return (
-    <div className="relative z-10 max-w-7xl mx-auto px-4 py-12 md:py-24 lg:py-32">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+    <div className="relative z-10 max-w-7xl mx-auto px-4 py-12 md:py-24">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
         {/* Sol Kolon (Web'de 1. Kolon, Mobilde Üst Satır) */}
         <div className="flex flex-col items-center lg:items-start text-center lg:text-left gap-6">
           <button
@@ -30,18 +38,18 @@ const FirstSection = () => {
   hover:-translate-y-1
           border-gray-200 border-2 rounded-lg text-gray-900 font-light text-sm md:text-base hover:bg-gray-50 "
           >
-            E-Ticaret için Geliştirildi
+            Hikayenin Başladığı Yerdesin{" "}
           </button>
 
           <div className="flex flex-col gap-2 md:gap-4">
             <p className="font-bold text-gray-900 text-3xl md:text-4xl lg:text-5xl">
-              Anında Yanıt
+              Profesyonel Destek
             </p>
             <p className="font-bold text-gray-900 text-3xl md:text-4xl lg:text-5xl flex items-center justify-center lg:justify-start gap-3 flex-wrap">
-              Artan <HighLightText>{reklam}</HighLightText>
+              <HighLightText>{reklam}</HighLightText>
             </p>
           </div>
-          <div className="flex flex-col gap-4 lg:flex-row">
+          <div className="flex flex-col sm:flex-row gap-4">
             <button
               className="  px-6 py-3
   rounded-xl
@@ -82,8 +90,8 @@ const FirstSection = () => {
           </h1>
           <p className="mt-4 md:mt-6 text-gray-600 text-sm sm:text-base md:text-lg max-w-xl">
             Dijitalin gücünü performansla birleştiren Dijitaldesin ile büyümeye
-            hazır olun. <br className="hidden sm:inline" /> Sürdürülebilir
-            büyüme hedefleyen markalar için buradayız.
+            hazır olun. Sürdürülebilir büyüme hedefleyen markalar için
+            buradayız.
           </p>
         </div>
       </div>

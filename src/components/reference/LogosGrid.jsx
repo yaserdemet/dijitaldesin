@@ -4,7 +4,7 @@ const LogosGrid = ({ logos }) => {
       {logos.map((logo, index) => (
         <div
           key={index}
-          className="flex items-center justify-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 h-24 group "
+          className="flex items-center justify-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 h-36 group "
           style={{
             animation: 'cardIn 0.6s ease-out forwards',
             animationDelay: `${index * 50}ms`,
@@ -14,7 +14,7 @@ const LogosGrid = ({ logos }) => {
           <img
             src={logo.src}
             alt={logo.name}
-            className="max-w-full max-h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300 opacity-80 group-hover:opacity-100"
+            className="max-w-full max-h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300 group-hover:opacity-100"
           />
         </div>
       ))}

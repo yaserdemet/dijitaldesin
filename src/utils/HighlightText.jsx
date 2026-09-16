@@ -13,11 +13,11 @@ const HighlightText = ({ children }) => {
           className="animate-highlight-box absolute left-0 top-0 rounded-lg"
           style={{ backgroundColor: 'var(--primary-color)' }}
         >
-          <Icon
+          {/* <Icon
             icon="bi:cursor-fill"
             className="animate-highlight-cursor absolute -bottom-3 -right-2 h-5 w-5"
             style={{ color: 'var(--primary-color)' }}
-          />
+          /> */}
         </span>
       </span>
     </span>
