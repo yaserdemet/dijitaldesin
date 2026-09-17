@@ -1,99 +1,20 @@
-import { useState, useEffect } from "react";
-import { Icon } from "@iconify/react";
-import HighLightText from "../../utils/HighlightText";
-const REKLAM_VALUES = [
-  "Artan Satışlar",
-  "Yükselen Dönüşümler",
-  "Büyüyen Markalar",
-  "Güçlenen Reklamlar",
-  "Artan Gelirler",
-  "Yükselen Kazançlar",
-  "Hızlanan Büyüme",
-];
-
 const FirstSection = () => {
-  const [reklam, setReklam] = useState(REKLAM_VALUES[0]);
-
-  useEffect(() => {
-    let index = 0;
-
-    const interval = setInterval(() => {
-      index = (index + 1) % REKLAM_VALUES.length;
-      setReklam(REKLAM_VALUES[index]);
-    }, 2000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <div className="relative z-10 max-w-7xl mx-auto px-4 py-12 md:py-24">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
-        {/* Sol Kolon (Web'de 1. Kolon, Mobilde Üst Satır) */}
-        <div className="flex flex-col items-center lg:items-start text-center lg:text-left gap-6">
-          <button
-            className="px-4 py-2
-           transition-all
-  duration-300
-  hover:shadow-xl
-  hover:-translate-y-1
-          border-gray-200 border-2 rounded-lg text-gray-900 font-light text-sm md:text-base hover:bg-gray-50 "
-          >
-            Hikayenin Başladığı Yerdesin{" "}
-          </button>
-
-          <div className="flex flex-col gap-2 md:gap-4">
-            <p className="font-bold text-gray-900 text-3xl md:text-4xl lg:text-5xl">
-              Profesyonel Destek
-            </p>
-            <p className="font-bold text-gray-900 text-3xl md:text-4xl lg:text-5xl flex items-center justify-center lg:justify-start gap-3 flex-wrap">
-              <HighLightText>{reklam}</HighLightText>
-            </p>
-          </div>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <button
-              className="  px-6 py-3
-  rounded-xl
-  bg-black
-  text-white
-  font-semibold
-  shadow-lg
-  transition-all
-  duration-300
-  hover:shadow-xl
-  hover:-translate-y-1"
-            >
-              Bizimle İletişime Geçin
-            </button>
-            <button
-              className="  px-6 py-3
-  rounded-xl
-  bg-white
-  text-black
-  font-semibold
-  shadow-lg
-  transition-all
-  duration-300
-  hover:shadow-xl
-  hover:-translate-y-1"
-            >
-              <Icon icon="akar-icons:phone" className="w-4 h-4 inline" /> Sizi
-              Arayalım
-            </button>
-          </div>
+      <div className="max-w-3xl mx-auto flex flex-col items-center text-center">
+        <div className="flex w-full justify-center">
+          <span className="px-4 py-2 sm:px-6 sm:py-3 rounded-xl bg-sky-50 text-blue-700 border-2 border-gray-200 font-semibold text-xs sm:text-sm text-center">
+            Dijitaldesin İle Hikayenin Başladığı Yerdesin
+          </span>
         </div>
-
-        {/* Sağ Kolon (Web'de 2. Kolon, Mobilde Alt Satır) */}
-        <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-            E-TİCARET VE DİJİTAL <br className="hidden sm:inline" /> DANIŞMANLIK
-            AJANSI
-          </h1>
-          <p className="mt-4 md:mt-6 text-gray-600 text-sm sm:text-base md:text-lg max-w-xl">
-            Dijitalin gücünü performansla birleştiren Dijitaldesin ile büyümeye
-            hazır olun. Sürdürülebilir büyüme hedefleyen markalar için
-            buradayız.
-          </p>
-        </div>
+        <h1 className="mt-4 md:mt-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-gray-900">
+          E-TİCARET & DİJİTAL <br className="hidden sm:inline" /> DANIŞMANLIK
+          AJANSI
+        </h1>
+        <p className="mt-4 md:mt-6 text-gray-600 text-sm sm:text-base md:text-lg max-w-xl">
+          Dijitalin gücünü performansla birleştiren Dijitaldesin ile büyümeye
+          hazır olun. Sürdürülebilir büyüme hedefleyen markalar için buradayız.
+        </p>
       </div>
     </div>
   );

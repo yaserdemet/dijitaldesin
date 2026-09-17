@@ -7,6 +7,14 @@
   --third-color: rgb(224, 242, 254);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+::selection{
+  background-color: var(--primary-color);
+}
+
 body {
   font-family: "Nunito", sans-serif;
 }

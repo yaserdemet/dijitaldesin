@@ -50,10 +50,10 @@ const WorkProcess = () => {
               key={step.id}
               className="bg-white border-2 border-gray-200 rounded-2xl p-6 shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
             >
-              <div className="w-14 h-14 rounded-xl bg-gray-100 border-2 border-gray-200 rotate-45 flex items-center justify-center mb-6">
+              <div className="w-14 h-14 rounded-xl bg-sky-100 border-2 border-gray-200 rotate-45 flex items-center justify-center mb-6">
                 <Icon
                   icon={step.icon}
-                  className="w-6 h-6 text-gray-900 -rotate-45"
+                  className="w-6 h-6 text-blue-600 -rotate-45"
                 />
               </div>
 

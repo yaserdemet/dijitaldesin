@@ -53,10 +53,12 @@ const HomeContactInfo = () => {
       <div className="space-y-12">
         {CONTACT_INFO.map((info) => (
           <div key={info.label} className="flex items-start gap-4">
-            <Icon
-              icon={info.icon}
-              className="w-7 h-7 text-gray-900 shrink-0 mt-0.5"
-            />
+            <div className="w-12 h-12 rounded-full bg-sky-100 border border-blue-200 flex items-center justify-center shrink-0 shadow-sm">
+              <Icon
+                icon={info.icon}
+                className="w-5 h-5 text-blue-600"
+              />
+            </div>
             <div>
               <p className="text-md font-bold text-gray-700 uppercase">
                 {info.label}
