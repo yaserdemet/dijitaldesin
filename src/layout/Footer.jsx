@@ -84,7 +84,7 @@ const Footer = () => {
 
             <p className="text-gray-600 text-sm leading-relaxed">
               İşletmenizin dijital dönüşümünü sağlayarak, hedef kitlenizle güçlü
-              bir bağ kurmamız ve satışlarınızı artırmamız için buradayız.
+              bir bağ kurmanız ve satışlarınızı artırmamız için buradayız.
             </p>
 
             {/* Sosyal Medya İkonları */}
@@ -128,7 +128,7 @@ const Footer = () => {
         <div className="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <div>
             <p className="text-gray-600 text-sm">
-              © {currentYear} DijitalDesin. Tüm hakları saklıdır.
+              © {currentYear} Dijitaldesin. Tüm hakları saklıdır.
             </p>
 
             <p className="text-gray-400 text-sm">
