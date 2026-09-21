@@ -33,8 +33,8 @@ const Home = () => {
           direction="down"
           columns={3}
           mobileColumns={2}
-          logoHeight="h-24"
-          mobileLogoHeight="h-16"
+          logoHeight="h-28"
+          mobileLogoHeight="h-28"
         />
       </Suspense>
 

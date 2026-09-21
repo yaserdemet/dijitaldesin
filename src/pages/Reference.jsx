@@ -4,19 +4,24 @@ import HighlightText from "../utils/HighlightText";
 
 const Reference = () => {
   //* Tek tek import yapmak yerine meta glob kullan
-  const logoModules = import.meta.glob("../assets/referances/*.svg", {
+  const logoModules = import.meta.glob("../assets/logolar/*.png", {
     eager: true,
     import: "default",
   });
 
-  const logos = Object.entries(logoModules).map(([path, src]) => {
-    const filename = path.split("/").pop().replace(".svg", "");
-    const name = filename
-      .split("-")
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(" ");
-    return { name, src };
-  });
+  const logos = Object.entries(logoModules)
+    .map(([path, src]) => {
+      const filename = path.split("/").pop().replace(/\.png$/, "");
+      const order = parseInt(filename, 10);
+      const name = filename
+        .split("-")
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(" ");
+      return { name, src, order };
+    })
+    // Dosya adındaki sayıya göre sırala; glob sonucu string olarak
+    // ("1", "10", "2"...) alfabetik sıralandığı için manuel sıralama şart.
+    .sort((a, b) => a.order - b.order);
 
   return (
     <>
