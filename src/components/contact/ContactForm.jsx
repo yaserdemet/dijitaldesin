@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 
-import { EMAILJS_CONFIG, } from "../../utils/emailjs";
+import { EMAILJS_CONFIG } from "../../utils/emailjs";
 
 const baseInputClass =
   "w-full px-4 py-3 border-2 rounded-xl focus:outline-none transition text-gray-900";
@@ -26,8 +26,12 @@ const ContactForm = () => {
     register,
     handleSubmit,
     reset,
+    watch,
     formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm({
+    // Görünmeyen alanların (örn. gizlendiğinde site linki) validasyonu
+    // formu bloklamasın diye unmount olunca otomatik unregister ediyoruz.
+    shouldUnregister: true,
     defaultValues: {
       name: "",
       email: "",
@@ -35,20 +39,24 @@ const ContactForm = () => {
       company: "",
       message: "",
       hasEcommerce: "",
+      ecommerceSiteUrl: "",
     },
   });
 
+  const hasEcommerce = watch("hasEcommerce");
+
   const onSubmit = async (data) => {
     setSendError("");
-
     // Şablonun gövdesi yalnızca {{name}}, {{time}} ve {{message}} basıyor,
     // bu yüzden diğer alanları mesajın altına ekliyoruz.
     const details = [
       `Telefon: ${data.phone}`,
       `Firma: ${data.company || "-"}`,
       `E-Ticaret sitesi: ${data.hasEcommerce === "yes" ? "Evet" : "Hayır"}`,
+      ...(data.hasEcommerce === "yes"
+        ? [`Site Linki: ${data.ecommerceSiteUrl || "-"}`]
+        : []),
     ].join("\n");
-
 
     try {
       await emailjs.send(
@@ -66,14 +74,14 @@ const ContactForm = () => {
 ---
 ${details}`,
         },
-        { publicKey: EMAILJS_CONFIG.publicKey }
+        { publicKey: EMAILJS_CONFIG.publicKey },
       );
 
       reset();
     } catch (error) {
       console.error("EmailJS error:", error);
       setSendError(
-        "Mesaj gönderilemedi. Lütfen tekrar deneyin veya bize doğrudan ulaşın."
+        "Mesaj gönderilemedi. Lütfen tekrar deneyin veya bize doğrudan ulaşın.",
       );
     }
   };
@@ -247,7 +255,33 @@ ${details}`,
               <span className="text-gray-700 font-medium">Hayır</span>
             </label>
           </div>
+
           <ErrorText>{errors.hasEcommerce?.message}</ErrorText>
+
+          {hasEcommerce === "yes" && (
+            <div className="mt-4">
+              <label
+                htmlFor="ecommerceSiteUrl"
+                className="block text-gray-900 font-semibold mb-2 text-sm"
+              >
+                Site Linkiniz *
+              </label>
+              <input
+                type="url"
+                id="ecommerceSiteUrl"
+                {...register("ecommerceSiteUrl", {
+                  required: "Lütfen site linkinizi giriniz",
+                  pattern: {
+                    value: /^(https?:\/\/)?([\w-]+\.)+[\w-]{2,}(\/\S*)?$/,
+                    message: "Geçerli bir site linki giriniz",
+                  },
+                })}
+                className={inputClass(errors.ecommerceSiteUrl)}
+                placeholder="https://www.siteniz.com"
+              />
+              <ErrorText>{errors.ecommerceSiteUrl?.message}</ErrorText>
+            </div>
+          )}
         </div>
 
         <button
