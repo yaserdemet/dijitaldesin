@@ -1,9 +1,19 @@
 import Seo from "../utils/Seo";
+import JsonLd from "../utils/JsonLd";
 import TicimaxLogo from "../assets/ticimax-logo.svg?url";
 import IkasLogo from "../assets/ikas-logo.svg";
 import AboutContent from "../components/about/AboutContent";
 import OrbitLogos from "../components/about/OrbitLogos";
 import MissionList from "../components/about/MissionList";
+import { SITE_URL, ORGANIZATION_SCHEMA } from "../utils/organizationSchema";
+
+const aboutJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  url: `${SITE_URL}/about`,
+  name: "Hakkımızda",
+  mainEntity: ORGANIZATION_SCHEMA,
+};
 
 const About = () => {
   const platforms = [
@@ -18,9 +28,10 @@ const About = () => {
   return (
     <>
       <Seo
-        title="Hakkımızda | DijitalDesin"
+        title="Hakkımızda"
         description="2019'den beri markaların dijital dönüşümü, güçlenmesi ve sürdürülebilir büyümesi için stratejik çözümler sunuyoruz. Veri odaklı, yaratıcı ve sonuç tabanında çalışan dijital pazarlama ajansı."
       />
+      <JsonLd data={aboutJsonLd} />
 
       <div className="min-h-screen bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 py-20">

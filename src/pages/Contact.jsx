@@ -4,11 +4,22 @@ import MapSection from '../components/contact/MapSection'
 import AboutSection from '../components/contact/AboutSection'
 import ContactHours from '../components/contact/ContactHours'
 import Seo from '../utils/Seo'
+import JsonLd from '../utils/JsonLd'
+import { SITE_URL, ORGANIZATION_SCHEMA } from '../utils/organizationSchema'
+
+const contactJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  url: `${SITE_URL}/contact`,
+  name: "İletişim",
+  mainEntity: ORGANIZATION_SCHEMA,
+}
 
 const Contact = () => {
   return (
     <div className="bg-white">
       <Seo title="İletişim" description="DijitalDesin ile iletişime geçin. Sorularınızı yanıtlamak ve size yardımcı olmak için buradayız." />
+      <JsonLd data={contactJsonLd} />
       <ContactHeader />
 
       <div className="py-16 md:py-24 px-4 relative">

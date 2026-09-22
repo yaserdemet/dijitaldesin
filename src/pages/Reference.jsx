@@ -1,6 +1,8 @@
 import Seo from "../utils/Seo";
+import JsonLd from "../utils/JsonLd";
 import LogosGrid from "../components/reference/LogosGrid";
 import HighlightText from "../utils/HighlightText";
+import { SITE_URL, ORGANIZATION_SCHEMA } from "../utils/organizationSchema";
 
 const Reference = () => {
   //* Tek tek import yapmak yerine meta glob kullan
@@ -23,12 +25,29 @@ const Reference = () => {
     // ("1", "10", "2"...) alfabetik sıralandığı için manuel sıralama şart.
     .sort((a, b) => a.order - b.order);
 
+  const referenceJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    url: `${SITE_URL}/reference`,
+    name: "Referanslar",
+    about: ORGANIZATION_SCHEMA,
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: logos.map((logo, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: logo.name,
+      })),
+    },
+  };
+
   return (
     <>
       <Seo
-        title="Referanslar | DijitalDesin"
+        title="Referanslar"
         description="DijitalDesin ile çalıştığımız 60+ markanın portföyünü ve başarı hikayelerini keşfedin."
       />
+      <JsonLd data={referenceJsonLd} />
 
       <div className="min-h-screen bg-white">
         <div className="max-w-7xl mx-auto px-4 py-20">

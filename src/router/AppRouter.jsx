@@ -6,6 +6,9 @@ import {
   ServicesPage,
   ContactPage,
   ReferancePage,
+  SssPage,
+  BlogPage,
+  BlogDetailPage,
   ErrorPage,
   KVKKPage,
   SecretPolicyPage,
@@ -36,6 +39,18 @@ const router = createBrowserRouter([
       {
         path: PATH_PAGE.referances,
         element: <ReferancePage />,
+      },
+      {
+        path: PATH_PAGE.sss,
+        element: <SssPage />,
+      },
+      {
+        path: PATH_PAGE.blog,
+        element: <BlogPage />,
+      },
+      {
+        path: PATH_PAGE.blogDetail,
+        element: <BlogDetailPage />,
       },
       {
         path: PATH_PAGE.kvkk,

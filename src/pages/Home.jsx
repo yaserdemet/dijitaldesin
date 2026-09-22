@@ -4,6 +4,9 @@ import Counts from "../components/home/Counts";
 import WorkProcess from "../components/home/WorkProcess";
 import ContactForm from "../components/contact/ContactForm";
 import HomeContactInfo from "../components/contact/HomeContactInfo";
+import Seo from "../utils/Seo";
+import JsonLd from "../utils/JsonLd";
+import { SITE_URL, ORGANIZATION_SCHEMA } from "../utils/organizationSchema";
 
 // Agir bagimliliklar (recharts / react-fast-marquee) baslangic Home chunk'indan
 // cikarilir; bu bilesenler ilk boyamadan sonra ayri chunk olarak yuklenir.
@@ -11,9 +14,30 @@ import HomeContactInfo from "../components/contact/HomeContactInfo";
 //* const RevenueSection = lazy(() => import("../components/home/RevenueSection"));
 const Carosuel = lazy(() => import("../components/home/Carosuel"));
 
+const homeJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    ORGANIZATION_SCHEMA,
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: `${SITE_URL}/`,
+      name: "Dijitaldesin",
+      publisher: { "@id": `${SITE_URL}/#organization` },
+      inLanguage: "tr-TR",
+    },
+  ],
+};
+
 const Home = () => {
   return (
     <>
+      <Seo
+        title="Dijital Pazarlama Ajansı"
+        description="Google, Meta ve TikTok reklam yönetimi, SEO ve e-ticaret entegrasyonları ile markanızı ölçülebilir şekilde büyütüyoruz."
+      />
+      <JsonLd data={homeJsonLd} />
+
       <main className="relative bg-white overflow-hidden">
 
         <FirstSection />

@@ -43,8 +43,8 @@ const linkColumns = [
     links: [
       { label: "Hakkında", to: "/about" },
       { label: "Neden Biz?", to: "/services" },
-      { label: "Blog", to: "/" },
-      { label: "Başarı Hikayeleri", to: "/" },
+      { label: "Blog", to: "/blog" },
+      { label: "SSS", to: "/sss" },
       { label: "İletişim", to: "/contact" },
     ],
   },

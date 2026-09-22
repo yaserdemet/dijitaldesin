@@ -1,4 +1,14 @@
 import Seo from "../utils/Seo";
+import JsonLd from "../utils/JsonLd";
+import { SITE_URL, ORGANIZATION_SCHEMA } from "../utils/organizationSchema";
+
+const kvkkJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  url: `${SITE_URL}/kvkk`,
+  name: "KVKK Aydınlatma Metni",
+  isPartOf: ORGANIZATION_SCHEMA,
+};
 
 const COMPANY = "DİJİTALDESİN AJANS";
 const ADDRESS = "One Tower Business Club, Oran, Kudüs Cd. 6/1, 06550 Çankaya / Ankara";
@@ -85,6 +95,7 @@ const Kvkk = () => {
         title="KVKK Aydınlatma Metni"
         description="DijitalDesin Ajans KVKK aydınlatma metni: işlenen kişisel veriler, işlenme amaçları, toplanma yöntemi, aktarım, saklama süresi ve veri güvenliği hakkında bilgilendirme."
       />
+      <JsonLd data={kvkkJsonLd} />
 
       <div className="min-h-screen bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 py-20">

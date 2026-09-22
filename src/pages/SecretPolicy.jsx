@@ -1,4 +1,14 @@
 import Seo from "../utils/Seo";
+import JsonLd from "../utils/JsonLd";
+import { SITE_URL, ORGANIZATION_SCHEMA } from "../utils/organizationSchema";
+
+const secretPolicyJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  url: `${SITE_URL}/secret-policy`,
+  name: "Gizlilik Politikası",
+  isPartOf: ORGANIZATION_SCHEMA,
+};
 
 const sections = [
   {
@@ -87,6 +97,7 @@ const SecretPolicy = () => {
         title="Gizlilik Politikası"
         description="Gizlilik politikası: toplanan bilgiler, bilgilerin kullanımı ve paylaşımı, kredi kartı güvenliği, çerezler ve istisnai haller hakkında bilgilendirme."
       />
+      <JsonLd data={secretPolicyJsonLd} />
 
       <div className="min-h-screen bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 py-20">
