@@ -20,7 +20,7 @@ export const ORGANIZATION_SCHEMA = {
   },
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+8503090374",
+    telephone: "+908503090374",
     email: "info@dijitaldesin.com",
     contactType: "customer service",
     areaServed: "TR",

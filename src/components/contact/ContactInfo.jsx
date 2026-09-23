@@ -5,8 +5,8 @@ const ContactInfo = () => {
     {
       icon: "solar:phone-bold",
       title: "Telefon",
-      value: "+850 309 03 74",
-      link: "tel:+8503090374",
+      value: "+908503090374",
+      link: "tel:+908503090374",
     },
     {
       icon: "solar:letter-bold",

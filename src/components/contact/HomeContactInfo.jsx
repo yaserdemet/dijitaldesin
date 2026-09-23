@@ -9,7 +9,7 @@ const CONTACT_INFO = [
   {
     icon: "solar:phone-bold",
     label: "Telefon",
-    value: "+850 309 03 74",
+    value: "+908503090374",
   },
   {
     icon: "solar:letter-bold",

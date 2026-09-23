@@ -13,8 +13,8 @@ const kvkkJsonLd = {
 const COMPANY = "DİJİTALDESİN AJANS";
 const ADDRESS = "One Tower Business Club, Oran, Kudüs Cd. 6/1, 06550 Çankaya / Ankara";
 const EMAIL = "info@dijitaldesin.com";
-const PHONE_LABEL = "+850 309 03 74";
-const PHONE_HREF = "tel:+8503090374";
+const PHONE_LABEL = "+908503090374";
+const PHONE_HREF = "tel:+908503090374";
 
 const sections = [
   {
