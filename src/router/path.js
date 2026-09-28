@@ -20,4 +20,5 @@ export const PATH_PAGE = {
   blogDetail: path(ROOTS_APP, 'blog/:slug'),
   kvkk: path(ROOTS_APP, 'kvkk'),
   secretPolicy: path(ROOTS_APP, 'secret-policy'),
+  thankYou: path(ROOTS_APP, 'tesekkurler'),
 };

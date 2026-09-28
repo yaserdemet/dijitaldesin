@@ -12,6 +12,7 @@ import {
   ErrorPage,
   KVKKPage,
   SecretPolicyPage,
+  EmailRecivedPage,
 } from "./element.jsx";
 import { PATH_PAGE } from "./path";
 
@@ -59,6 +60,10 @@ const router = createBrowserRouter([
       {
         path: PATH_PAGE.secretPolicy,
         element: <SecretPolicyPage />,
+      },
+      {
+        path: PATH_PAGE.thankYou,
+        element: <EmailRecivedPage />,
       },
       {
         path: "*",

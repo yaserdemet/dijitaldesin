@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 
 import { EMAILJS_CONFIG } from "../../utils/emailjs";
+import { PATH_PAGE } from "../../router/path";
 
 const baseInputClass =
   "w-full px-4 py-3 border-2 rounded-xl focus:outline-none transition text-gray-900";
@@ -21,13 +23,14 @@ const ErrorText = ({ children }) =>
 
 const ContactForm = () => {
   const [sendError, setSendError] = useState("");
+  const navigate = useNavigate();
 
   const {
     register,
     handleSubmit,
     reset,
     watch,
-    formState: { errors, isSubmitting, isSubmitSuccessful },
+    formState: { errors, isSubmitting },
   } = useForm({
     // Görünmeyen alanların (örn. gizlendiğinde site linki) validasyonu
     // formu bloklamasın diye unmount olunca otomatik unregister ediyoruz.
@@ -77,7 +80,23 @@ ${details}`,
         { publicKey: EMAILJS_CONFIG.publicKey },
       );
 
+      // Reklam dönüşüm eventleri (OpenAI/Google/Meta) teşekkür sayfasının
+      // mount'unda tetikleniyor; bu bayrak sadece gerçek bir gönderimden
+      // sonra ateşlenmesini, sayfa yenilemede tekrar saymasını engeller.
+      try {
+        sessionStorage.setItem("dd_lead_pending", "1");
+      } catch {
+        // sessionStorage kapalıysa (gizli sekme vb.) sessizce yok say
+      }
+
       reset();
+      navigate(PATH_PAGE.thankYou, {
+        state: {
+          name: data.name,
+          email: data.email,
+          phone: data.phone,
+        },
+      });
     } catch (error) {
       console.error("EmailJS error:", error);
       setSendError(
@@ -95,20 +114,6 @@ ${details}`,
         Aşağıdaki formu doldurup gönderin. En kısa sürede sizinle iletişime
         geçeceğiz.
       </p>
-
-      {isSubmitSuccessful && (
-        <div className="mb-6 p-4 bg-white border-2 border-black rounded-xl flex items-start gap-3 shadow-lg">
-          <span className="text-2xl">✓</span>
-          <div>
-            <h3 className="font-bold text-gray-900">
-              Mesajınız başarıyla gönderildi!
-            </h3>
-            <p className="text-sm text-gray-600">
-              En kısa sürede sizinle iletişime geçeceğiz.
-            </p>
-          </div>
-        </div>
-      )}
 
       {sendError && (
         <div className="mb-6 p-4 bg-white border-2 border-red-400 rounded-xl flex items-start gap-3 shadow-lg">

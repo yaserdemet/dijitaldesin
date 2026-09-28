@@ -38,7 +38,7 @@ const Home = () => {
       />
       <JsonLd data={homeJsonLd} />
 
-      <main className="relative bg-white overflow-hidden">
+      <main className="relative animate-scale-in bg-white overflow-hidden">
 
         <FirstSection />
         <WorkProcess />

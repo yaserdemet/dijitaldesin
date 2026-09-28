@@ -20,5 +20,6 @@ export const BlogDetailPage = Loadable(lazy(() => import("../pages/BlogDetail.js
 export const ErrorPage = Loadable(lazy(() => import("../pages/Error.jsx")));
 export const KVKKPage = Loadable(lazy(() => import("../pages/Kvkk.jsx")));
 export const SecretPolicyPage = Loadable(lazy(() => import("../pages/SecretPolicy.jsx")));
+export const EmailRecivedPage = Loadable(lazy(() => import("../pages/EmailRecived.jsx")));
 // export const LoadPage = Loadable(lazy(() => import("../pages/LoadingPage.jsx")));
 
