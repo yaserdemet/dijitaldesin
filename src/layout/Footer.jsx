@@ -1,8 +1,9 @@
 import { Fragment } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Icon } from "@iconify/react";
 import DijitalDesinLogo from "../assets/digi1.svg";
 import Cards from "../assets/cards.svg";
+import { toWithSearch } from "../utils/withSearch";
 
 const linkClass = "text-gray-600 hover:text-gray-900 transition text-sm";
 
@@ -66,6 +67,7 @@ const bottomLinks = [
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const { search } = useLocation();
 
   return (
     <footer className="bg-white text-gray-900 py-16 border-t border-gray-100">
@@ -74,7 +76,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand Section */}
           <div className="space-y-4">
-            <Link to="/" className="text-2xl font-bold">
+            <Link to={toWithSearch("/", search)} className="text-2xl font-bold">
               <img
                 src={DijitalDesinLogo}
                 alt="DijitalDesin Logo"
@@ -114,7 +116,7 @@ const Footer = () => {
               <ul className="space-y-3">
                 {column.links.map((link) => (
                   <li key={link.label}>
-                    <Link to={link.to} className={linkClass}>
+                    <Link to={toWithSearch(link.to, search)} className={linkClass}>
                       {link.label}
                     </Link>
                   </li>
@@ -142,7 +144,7 @@ const Footer = () => {
           <div className="flex items-center gap-4">
             {bottomLinks.map((link, index) => (
               <Fragment key={link.label}>
-                <Link to={link.to} className={linkClass}>
+                <Link to={toWithSearch(link.to, search)} className={linkClass}>
                   {link.label}
                 </Link>
                 {index < bottomLinks.length - 1 && (

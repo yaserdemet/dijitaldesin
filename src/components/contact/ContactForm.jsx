@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 
 import { EMAILJS_CONFIG } from "../../utils/emailjs";
 import { PATH_PAGE } from "../../router/path";
+import { toWithSearch } from "../../utils/withSearch";
 
 const baseInputClass =
   "w-full px-4 py-3 border-2 rounded-xl focus:outline-none transition text-gray-900";
@@ -24,6 +25,7 @@ const ErrorText = ({ children }) =>
 const ContactForm = () => {
   const [sendError, setSendError] = useState("");
   const navigate = useNavigate();
+  const location = useLocation();
 
   const {
     register,
@@ -90,7 +92,7 @@ ${details}`,
       }
 
       reset();
-      navigate(PATH_PAGE.thankYou, {
+      navigate(toWithSearch(PATH_PAGE.thankYou, location.search), {
         state: {
           name: data.name,
           email: data.email,

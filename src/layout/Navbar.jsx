@@ -1,7 +1,8 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { useState } from "react";
 import Logo from "../assets/digi1.svg";
 import { Icon } from "@iconify/react";
+import { toWithSearch } from "../utils/withSearch";
 
 const NAV_LINKS = [
   { label: "Anasayfa", path: "/" },
@@ -25,13 +26,14 @@ const NAV_STYLES = {
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { search } = useLocation();
 
   return (
     <nav className="sticky top-0 z-50 bg-white  border border-b-2 border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <NavLink to="/" className="flex items-center flex-shrink-0">
+          <NavLink to={toWithSearch("/", search)} className="flex items-center flex-shrink-0">
             <img
               src={Logo}
               width="180"
@@ -46,7 +48,7 @@ const Navbar = () => {
             {NAV_LINKS.map((link) => (
               <NavLink
                 key={link.path}
-                to={link.path}
+                to={toWithSearch(link.path, search)}
                 className={({ isActive }) =>
                   isActive ? NAV_STYLES.activeLink : NAV_STYLES.link
                 }
@@ -59,7 +61,7 @@ const Navbar = () => {
           {/* CTA Button & Mobile Menu */}
           <div className="flex items-center gap-4">
             <NavLink
-              to="/contact"
+              to={toWithSearch("/contact", search)}
               className="hidden  md:flex md:items-center md:align-middle gap-2 bg-zinc-900 text-white px-6 py-2 rounded-lg hover:shadow-lg transition font-medium"
             >
               Sizi Arayalım{" "}
@@ -100,7 +102,7 @@ const Navbar = () => {
               {NAV_LINKS.map((link) => (
                 <NavLink
                   key={link.path}
-                  to={link.path}
+                  to={toWithSearch(link.path, search)}
                   className={({ isActive }) =>
                     isActive
                       ? NAV_STYLES.activeMobileLink
