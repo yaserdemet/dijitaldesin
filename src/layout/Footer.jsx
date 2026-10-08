@@ -26,6 +26,12 @@ const socialLinks = [
     icon: "mynaui:linkedin",
     hover: "hover:bg-blue-100 hover:border-blue-300 hover:text-blue",
   },
+  {
+    label: "DijitalDesin",
+    href: "https://dashboard.dijitaldesin.com",
+    image: "/favicon.jpeg",
+    hover: "hover:bg-gray-100 hover:border-gray-300",
+  },
 ];
 
 const linkColumns = [
@@ -100,7 +106,11 @@ const Footer = () => {
                   aria-label={social.label}
                   className={`w-8 h-8 flex items-center justify-center rounded-lg shadow-lg bg-white text-gray-600 border transition-colors duration-500 ease-in-out ${social.hover}`}
                 >
-                  <Icon icon={social.icon} className="w-5 h-5" />
+                  {social.image ? (
+                    <img src={social.image} alt="" className="w-5 h-5 rounded" />
+                  ) : (
+                    <Icon icon={social.icon} className="w-5 h-5" />
+                  )}
                 </a>
               ))}
             </div>

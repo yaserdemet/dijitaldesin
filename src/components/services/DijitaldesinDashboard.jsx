@@ -37,13 +37,18 @@ const DijitaldesinDashboard = () => {
                 />
                 <div className="absolute inset-0 bg-black/15" />
 
-                {/* Sabit oran: mobil görsellerin hepsi aynı kutuda, kenar boşluksuz */}
                 <div className="absolute bottom-[2%] right-[3%] z-10 h-[90%] aspect-[365/740] overflow-hidden rounded-[36px] shadow-2xl">
-                  <img
-                    src={currentImage}
-                    alt="DijitalDesin mobil performans paneli"
-                    className="h-full w-full object-cover object-left"
-                  />
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://dashboard.dijitaldesin.com"
+                  >
+                    <img
+                      src={currentImage}
+                      alt="DijitalDesin mobil performans paneli"
+                      className="h-full w-full object-cover object-left"
+                    />
+                  </a>
                 </div>
               </div>
             </div>
@@ -51,9 +56,16 @@ const DijitaldesinDashboard = () => {
 
           {/* Metin */}
           <div className="space-y-8 order-1 lg:order-2">
-            <span className="inline-block px-4 py-2 rounded-2xl text-xs font-semibold border border-gray-300 text-gray-900">
-              DİJİTALDESİN PANEL
-            </span>
+            <a
+              href="https://dashboard.dijitaldesin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block"
+            >
+              <span className="inline-block px-4 py-2 rounded-2xl text-xs font-semibold border border-gray-300 text-gray-900">
+                DİJİTALDESİN PANEL
+              </span>
+            </a>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight lg:leading-[1.2]">
               Tüm Verileriniz <HighlightText>Tek Panelde</HighlightText>

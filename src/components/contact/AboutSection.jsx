@@ -39,6 +39,11 @@ const AboutSection = () => {
       label: "LinkedIn",
       link: "https://www.linkedin.com/company/dijitaldesin-reklam-ajansı/",
     },
+    {
+      image: "/favicon.jpeg",
+      label: "Dijitaldesin Dashboard",
+      link: "https://dashboard.dijitaldesin.com",
+    },
   ];
 
   return (
@@ -78,12 +83,18 @@ const AboutSection = () => {
         <div className="flex gap-4">
           {socials.map((social, index) => (
             <a
+              target="_blank"
+              rel="noopener noreferrer"
               key={index}
               href={social.link}
               title={social.label}
               className="w-12 h-12 bg-gray-50 border-2 border-gray-200 rounded-xl flex items-center justify-center text-gray-900 shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-black"
             >
-              <Icon icon={social.icon} className="w-6 h-6" />
+              {social.image ? (
+                <img src={social.image} alt="" className="w-6 h-6 rounded" />
+              ) : (
+                <Icon icon={social.icon} className="w-6 h-6" />
+              )}
             </a>
           ))}
         </div>

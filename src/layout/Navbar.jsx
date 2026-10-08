@@ -33,7 +33,10 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <NavLink to={toWithSearch("/", search)} className="flex items-center flex-shrink-0">
+          <NavLink
+            to={toWithSearch("/", search)}
+            className="flex items-center flex-shrink-0"
+          >
             <img
               src={Logo}
               width="180"
@@ -60,17 +63,21 @@ const Navbar = () => {
 
           {/* CTA Button & Mobile Menu */}
           <div className="flex items-center gap-4">
-            <NavLink
-              to={toWithSearch("/contact", search)}
+            <a
+              href="https://dashboard.dijitaldesin.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hidden  md:flex md:items-center md:align-middle gap-2 bg-zinc-900 text-white px-6 py-2 rounded-lg hover:shadow-lg transition font-medium"
             >
-              Sizi Arayalım{" "}
-              <Icon
-                icon="line-md:phone-call-loop"
-                className="text-white inline"
-                height="1em"
-              />
-            </NavLink>
+           
+                Sizi Arayalım{" "}
+                <Icon
+                  icon="line-md:phone-call-loop"
+                  className="text-white inline"
+                  height="1em"
+                />
+          
+              </a>
 
             {/* Mobile Menu Button */}
             <button
