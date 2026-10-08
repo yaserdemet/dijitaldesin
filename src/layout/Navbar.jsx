@@ -70,9 +70,9 @@ const Navbar = () => {
               className="hidden  md:flex md:items-center md:align-middle gap-2 bg-zinc-900 text-white px-6 py-2 rounded-lg hover:shadow-lg transition font-medium"
             >
            
-                Sizi Arayalım{" "}
+                Dijitaldesin Dashboard{" "}
                 <Icon
-                  icon="line-md:phone-call-loop"
+                  icon="line-md:speedometer-loop"
                   className="text-white inline"
                   height="1em"
                 />
