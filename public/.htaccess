@@ -2,13 +2,19 @@
   RewriteEngine On
   RewriteBase /
 
+  # Prerender edilen sayfalar (/sss -> /sss/index.html) sonda "/" olmadan,
+  # yönlendirme yapmadan sunulsun
+  DirectorySlash Off
+  RewriteCond %{REQUEST_FILENAME}/index.html -f
+  RewriteRule ^(.+?)/?$ /$1/index.html [L]
+
   # Gerçek dosya veya klasörse dokunma (JS, CSS, resim, favicon vb.)
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteRule ^ - [L]
 
-  # Diğer her isteği index.html'e yönlendir (React Router SPA fallback)
-  RewriteRule ^ /index.html [L]
+  # Prerender edilmemiş diğer istekleri boş şablon spa.html'e yönlendir (React Router SPA fallback)
+  RewriteRule ^ /spa.html [L]
 </IfModule>
 
 # Statik dosyalar için uzun cache, index.html için cache yok
@@ -18,7 +24,7 @@
 </IfModule>
 
 <IfModule mod_headers.c>
-  <FilesMatch "index\.html$">
+  <FilesMatch "\.html$">
     Header set Cache-Control "no-cache, no-store, must-revalidate"
   </FilesMatch>
 </IfModule>

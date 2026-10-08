@@ -16,7 +16,8 @@ import {
 } from "./element.jsx";
 import { PATH_PAGE } from "./path";
 
-const router = createBrowserRouter([
+// Route dizisi build sırasında prerender (src/entry-server.jsx) için de kullanılır.
+export const routes = [
   {
     path: PATH_PAGE.root,
     element: <Layout />,
@@ -71,6 +72,10 @@ const router = createBrowserRouter([
       },
     ],
   },
-]);
+];
+
+// Build sırasındaki prerender ortamında window yok; tarayıcı router yalnızca istemcide kurulur.
+const router =
+  typeof window !== "undefined" ? createBrowserRouter(routes) : null;
 
 export default router;

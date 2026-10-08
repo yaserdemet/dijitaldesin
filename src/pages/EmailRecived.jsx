@@ -43,7 +43,7 @@ const EmailRecived = () => {
   }
 
   return (
-    <div className="bg-white animate-scale-in min-h-[70vh] flex items-center px-4 py-16 md:py-24">
+    <div className="bg-white min-h-[70vh] flex items-center px-4 py-16 md:py-24">
       <Seo
         title="Mesajınız Alındı"
         description="Mesajınız başarıyla iletildi. Dijitaldesin ekibi en kısa sürede sizinle iletişime geçecek."

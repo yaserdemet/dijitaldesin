@@ -1,3 +1,5 @@
+import { copyFileSync } from "node:fs";
+import path from "node:path";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
@@ -20,6 +22,20 @@ export default defineConfig({
       name: "html-site-url",
       transformIndexHtml: (html) =>
         html.replaceAll("%SITE_URL%", siteUrl),
+    },
+
+    // Prerender edilmeyen sayfaların fallback'i (vercel.json / .htaccess -> /spa.html).
+    // Prerender adımı çalışmasa bile site ayakta kalsın diye client build'de üretilir.
+    {
+      name: "spa-fallback-html",
+      apply: "build",
+      writeBundle(options, bundle) {
+        if (!bundle["index.html"]) return;
+        copyFileSync(
+          path.join(options.dir, "index.html"),
+          path.join(options.dir, "spa.html"),
+        );
+      },
     },
   ],
 

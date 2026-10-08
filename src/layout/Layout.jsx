@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Outlet, ScrollRestoration } from "react-router-dom";
+import { Outlet, ScrollRestoration, useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import ErrorBoundary from "../components/ErrorBoundary";
@@ -15,11 +15,13 @@ const Layout = () => {
     );
   };
   const [showText, setShowText] = useState(false);
+  const { pathname } = useLocation();
 
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      <main className="flex-1">
+      {/* Tüm sayfalarda açılış animasyonu; key sayesinde her sayfa geçişinde yeniden oynar. */}
+      <main key={pathname} className="flex-1 animate-scale-in">
         <ErrorBoundary>
           <Outlet />
         </ErrorBoundary>
