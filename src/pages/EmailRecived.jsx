@@ -24,6 +24,9 @@ const EmailRecived = () => {
     if (pending && typeof window.oaiq === "function") {
       window.oaiq("measure", "lead_created", { type: "customer_action" });
     }
+    if (pending && typeof window.fbq === "function") {
+      window.fbq("track", "Lead");
+    }
   }, []);
 
   useEffect(() => {

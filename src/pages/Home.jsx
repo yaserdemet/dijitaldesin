@@ -2,6 +2,7 @@ import { Suspense, lazy } from "react";
 import FirstSection from "../components/home/FirstSection";
 import Counts from "../components/home/Counts";
 import WorkProcess from "../components/home/WorkProcess";
+import ProcessSteps from "../components/home/ProcessSteps";
 import ContactForm from "../components/contact/ContactForm";
 import HomeContactInfo from "../components/contact/HomeContactInfo";
 import Seo from "../utils/Seo";
@@ -73,6 +74,8 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      <ProcessSteps />
     </>
   );
 };

@@ -1,21 +1,10 @@
 import { useEffect, useState } from "react";
 import Marquee from "react-fast-marquee";
 import { Icon } from "@iconify/react";
-import ticimaxLogo from "../../assets/ticimax-logo.svg";
-import ikasLogo from "../../assets/ikas-logo.svg";
+import { brands } from "./brandsData";
 
 const MarqueeComponent =
   typeof Marquee === "function" ? Marquee : Marquee?.default || Marquee;
-
-const brands = [
-  { name: "Shopify", icon: "logos:shopify" },
-  { name: "Google Ads", icon: "logos:google-ads" },
-  { name: "TikTok", icon: "logos:tiktok-icon" },
-  { name: "ikas", src: ikasLogo },
-  { name: "Ticimax", src: ticimaxLogo },
-  { name: "Google Partner", icon: "logos:google" },
-  { name: "Meta Business Partner", icon: "logos:meta" },
-];
 
 //* Tek tek import yapmak yerine meta glob kullan
 const logoModules = import.meta.glob("../../assets/logolar/*.png", {

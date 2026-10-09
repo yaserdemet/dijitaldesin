@@ -3,6 +3,7 @@ import { Outlet, ScrollRestoration, useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import ErrorBoundary from "../components/ErrorBoundary";
+import PageViewTracker from "../components/PageViewTracker";
 import { Icon } from "@iconify/react";
 
 const Layout = () => {
@@ -19,6 +20,7 @@ const Layout = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <PageViewTracker />
       <Navbar />
       {/* Tüm sayfalarda açılış animasyonu; key sayesinde her sayfa geçişinde yeniden oynar. */}
       <main key={pathname} className="flex-1 animate-scale-in">
