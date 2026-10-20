@@ -2,6 +2,14 @@ import { createRoot, hydrateRoot } from 'react-dom/client'
 import { RouterProvider } from 'react-router-dom'
 import './index.css'
 import router from './router/AppRouter'
+import posthog from 'posthog-js'
+
+// defaults: history_change sayesinde SPA rota değişimlerinde $pageview otomatik gönderilir.
+posthog.init('phc_CqvgbsqAVQQ9EmEXLpsDv5X69AbCpyNPoMfsSdqupS7s', {
+    api_host: 'https://eu.i.posthog.com',
+    defaults: '2025-05-24',
+    person_profiles: 'identified_only',
+})
 
 const container = document.getElementById('root')
 const app = <RouterProvider router={router} />
