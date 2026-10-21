@@ -25,3 +25,10 @@ if (prerenderedPath && normalizePath(prerenderedPath) === normalizePath(window.l
     container.replaceChildren()
     createRoot(container).render(app)
 }
+
+// PWA: service worker yalnızca production'da kaydedilir (dev'de HMR'ı etkilemesin).
+if (import.meta.env.PROD && 'serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {})
+    })
+}

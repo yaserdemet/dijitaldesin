@@ -17,6 +17,9 @@
   RewriteRule ^ /spa.html [L]
 </IfModule>
 
+# PWA manifest doğru MIME tipiyle sunulsun
+AddType application/manifest+json .webmanifest
+
 # Statik dosyalar için uzun cache, index.html için cache yok
 <IfModule mod_expires.c>
   ExpiresActive On
@@ -24,7 +27,7 @@
 </IfModule>
 
 <IfModule mod_headers.c>
-  <FilesMatch "\.html$">
+  <FilesMatch "(\.html|sw\.js)$">
     Header set Cache-Control "no-cache, no-store, must-revalidate"
   </FilesMatch>
 </IfModule>
