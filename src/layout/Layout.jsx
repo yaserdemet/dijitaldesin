@@ -4,6 +4,8 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import ErrorBoundary from "../components/ErrorBoundary";
 import PageViewTracker from "../components/PageViewTracker";
+import OfflineNotice from "../components/OfflineNotice";
+import useOnlineStatus from "../hooks/useOnlineStatus";
 import { Icon } from "@iconify/react";
 
 const Layout = () => {
@@ -17,6 +19,7 @@ const Layout = () => {
   };
   const [showText, setShowText] = useState(false);
   const { pathname } = useLocation();
+  const isOnline = useOnlineStatus();
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -25,7 +28,7 @@ const Layout = () => {
       {/* Tüm sayfalarda açılış animasyonu; key sayesinde her sayfa geçişinde yeniden oynar. */}
       <main key={pathname} className="flex-1 animate-scale-in">
         <ErrorBoundary>
-          <Outlet />
+          {isOnline ? <Outlet /> : <OfflineNotice />}
         </ErrorBoundary>
       </main>
       <button
