@@ -6,7 +6,7 @@ import { SITE_URL, ORGANIZATION_SCHEMA } from "../utils/organizationSchema";
 
 const Reference = () => {
   //* Tek tek import yapmak yerine meta glob kullan
-  const logoModules = import.meta.glob("../assets/logolar/*.png", {
+  const logoModules = import.meta.glob("../assets/logolar/*.{png,webp}", {
     eager: true,
     import: "default",
   });
